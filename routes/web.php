@@ -1,10 +1,16 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomePageController;
+use App\Http\Controllers\InputProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PerwalikotaController;
+use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SyaratController;
+use App\Http\Controllers\UploadBerkasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +31,17 @@ Route::post('register/action', [RegisterController::class, 'actionregister'])->n
 
 Route::get('/', [LoginController::class, 'login'])->name('login');
 Route::post('actionlogin', [LoginController::class, 'actionlogin'])->name('actionlogin');
+
+route::get('syarat', [SyaratController::class, 'syarat'])->name('syarat');
+
+route::get('dbuser', [DashboardController::class, 'dbuser'])->name('dbuser');
+
+route::get('profil', [ProfilController::class, 'profil'])->name('profil');
+
+route::get('upload', [UploadBerkasController::class, 'upload'])->name('upload');
+
+
+route::post('/simpan-data', [ProfilController::class, 'store'])->name('simpan-data');
 
 Route::get('dbadmin', [LoginController::class, 'index'])->name('index');
 
