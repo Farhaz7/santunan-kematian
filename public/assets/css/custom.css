@@ -204,19 +204,19 @@ overflow:auto;
   }
 
    #sidebar ul li.active> a{
-	   color:#4c7cf3;
-	   background-color:#DBE5FD;
+	   /* color:#3dc43d; */
+
    }
 
 
    #sidebar ul li.active> a i{
-	    color:#4c7cf3;
+	    /* color:#3dc43d; */
    }
 
 
 
      #sidebar ul li a:hover{
-		  color:#4c7cf3;
+		  color:#3dc43d;
 		  background-color:#DBE5FD;
 	 }
 
@@ -272,7 +272,7 @@ overflow:auto;
 		  z-index:9;
 		  position:relative;
 		  padding:15px 30px;
-		  background-color:#353b48;
+		  background-color:#354836;
 	 }
 
 	 .xd-topbar{
@@ -805,6 +805,27 @@ background-color:rgba(0,0,0,0.09);
 			background-color:rgba(0,0,0,0.5);
 		}
 	}
+
+    .navbar {
+        background-color: ;
+    }
+
+    .sarat {
+        background-color: #f3f3f3;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .welcome {
+        font-family: bebas neue;
+        padding-bottom: 1.5rem;
+    }
+
+    .isi-text {
+        padding-bottom: .5rem;
+    }
 
 
 

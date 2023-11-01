@@ -3,7 +3,7 @@
 
 @media only screen and (max-width:576px){
 .slogan{
- display:none!important;  
+ display:none!important;
 }
 
 .courses h3 {
@@ -104,13 +104,13 @@ padding: 6px 0px;
 text-align:justify!important;
 }
 .express-outer > .fsa {
-text-align:justify!important;  
+text-align:justify!important;
 }
 .content-head p {
     font-size: 17px;
     font-weight: 300;
-	text-align:justify!important;  
-    padding: 0 0%!important; 
+	text-align:justify!important;
+    padding: 0 0%!important;
 }
 #about {
     padding: 50px 0!important;
@@ -181,7 +181,7 @@ text-align:justify!important;
 }
 }
 
-@media only screen and (max-width:576px){	
+@media only screen and (max-width:576px){
    .store-block{
       display:none!important;
    }
@@ -190,11 +190,11 @@ text-align:justify!important;
    }
 }
 
-@media only screen and (min-width:1200px){	
+@media only screen and (min-width:1200px){
    .container{padding:0px 0px;}
 }
 
- @media only screen and (max-width:1200px){	
+ @media only screen and (max-width:1200px){
  .form-sec-in{
  position:relative!important;
  top:-0px;
@@ -203,8 +203,8 @@ text-align:justify!important;
  left:0;
 }
 }
- 
- 
+
+
    @media only screen and (min-width:1024px){
     #sr-new-box{
     margin-top: 140px;
@@ -213,13 +213,13 @@ text-align:justify!important;
     margin-top: 100px;
     }
    }
-  
- 
+
+
 
 @media only screen and (min-width:992px){
-	
 
-	
+
+
  .mega-dropdown{
 	     width:100%;
 		 position:sticky;
@@ -243,9 +243,9 @@ text-align:justify!important;
 	   box-shadow:0px 3px 10px rgba(0,0,0,0.1);
 	   animation:dropanimate 700ms ease 1;
 	   z-index:1020;
-	  } 
+	  }
 
-	  
+
 	 .mega-dropdown{
 	     width:100%;
 		 position:absolute;
@@ -261,7 +261,7 @@ text-align:justify!important;
          color:#fff;
 		 transform:rotate(180deg);
         }
-	  
+
 	  .dropdown:hover .menu{
 	   display:block;
 	   }
@@ -275,7 +275,7 @@ text-align:justify!important;
 }
 
 .nav-item .nav-link {
-     border-left: 0px solid #375b63!important; 
+     border-left: 0px solid #375b63!important;
      border-right: 0px solid #375b63!important;
 }
 
@@ -284,11 +284,11 @@ text-align:justify!important;
     margin:63px 0px 0px 0px;
     display:none;
 }
- 
+
  .navbar-nav  li  {
 border-bottom: 1px solid rgba(9, 8, 8, 0.09)!important;
  }
- 
+
 .navbar-nav  li  a{
  padding:13px 0px 13px 10px!important;
  margin:0px 0px!important
@@ -325,7 +325,7 @@ overflow-x:hidden!important;
 
 .has-sub:hover  > a:before{
   opacity:0;
- background-color:transparent; 
+ background-color:transparent;
 }
 
 .mega-menu{
@@ -338,7 +338,7 @@ overflow-x:hidden!important;
 .dropdown-inner{
    padding:20px 0px 30px 20px!important;
  }
-  
+
 
 
 
