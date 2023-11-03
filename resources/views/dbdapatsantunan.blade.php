@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/assets/img/bjb.ico" />
-    <title>Dashboard Admin</title>
+    <title>Data Dapat Santunan</title>
     <style>
         .sarat {
             background-color: #f3f3f3;
@@ -57,7 +57,7 @@
 
             <ul class="list-unstyled component m-0">
                 <li class="active">
-                    <a href="#" class="dashboard"><i class="material-icons">home</i>Dashboard </a>
+                    <a href="dbadmin" class="dashboard"><i class="material-icons">home</i>Dashboard </a>
                 </li>
 
                 <li class="dropdown">
@@ -72,7 +72,6 @@
                 <li class="logout">
                     <a href="{{ route('actionlogout') }}" class=""><i class="material-icons">logout</i>Keluar</a>
                 </li>
-
             </ul>
         </div>
         <div id="content">
@@ -133,9 +132,11 @@
                                 </nav>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
+
             <div class="main-content sarat" style=" height: 708px;">
                 <div class="row">
                     <div class="col-md-12">
@@ -143,8 +144,8 @@
                             {{-- <h4 class="page-title">Dashboard Admin</h4> --}}
                             <div class="main-content text-center">
                                 @section('konten')
-                                    <h5>Selamat Datang <b>{{ Auth::user()->name }}</b>, Anda Login sebagai
-                                        <b>{{ Auth::user()->role }}</b>.
+                                    <h5> <b>{{ Auth::user()->name }}</b>, Anda sebagai
+                                        <b>{{ Auth::user()->role }}</b>, Berikut Data Masyarakat yang mendapatkan Santunan Kematian.
                                     </h5>
                                 @show
                             </div>
@@ -152,117 +153,24 @@
                         </div>
                         <div class="table-wrapper">
                             <div class="content">
-                                <h4 style="background-color: #f3f3f3; padding: 10px; margin: 0; border-radius: 0px;"><i class="material-icons">dataset</i>Pengajuan Masuk</h4>
+                                <h4 style="background-color: #f3f3f3; padding: 10px; margin: 0; border-radius: 0px;"><i class="material-icons">dataset</i>Data Dapat Santunan</h4>
                                 <div class="card card-info card-outline">
                                     <div class="card-body">
                                         <div class="table-responsive">
                                             <table class="table table-bordered">
                                                 <thead>
                                                     <tr>
-                                                        <th style="text-align: center"><b>No</th>
-                                                        <th style="text-align: center"><b>Nik yang meninggal</th>
-                                                        <th style="text-align: center"><b>Nama yang meninggal</th>
-                                                        <th style="text-align: center"><b>Tanggal meninggal</th>
-                                                        <th style="text-align: center"><b>Nama ahli waris</th>
-                                                        <th style="text-align: center"><b>Tanggal pengajuan</th>
-                                                        <th style="text-align: center"><b>Cek Kelengkapan Berkas</th>
+                                                        <th style="text-align: center"><b>Nama Yang Meninggal</th>
+                                                        <th style="text-align: center"><b>Tgl Meninggal</th>
+                                                        <th style="text-align: center"><b>Nama Ahli Waris</th>
+                                                        <th style="text-align: center"><b>Tgl Pengajuan</th>
+                                                        <th style="text-align: center"><b>Tgl Pencairan</th>
+                                                        <th style="text-align: center"><b>Status</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td style="text-align: center">1</td>
-                                                        <td style="text-align: center">63012376239236</td>
-                                                        <td style="text-align: center">Baharuddin</td>
-                                                        <td style="text-align: center">12-07-23</td>
-                                                        <td style="text-align: center">Yusuf</td>
-                                                        <td style="text-align: center">15-11-23</td>
-                                                        <td><div class="button-container"> 
-                                                        <style> #tombol {
-                                                        background-color: #E5C3A6; /* Ubah warna latar belakang tombol */
-                                                        color: #fff; /* Ubah warna teks tombol */
-                                                        font-size: 18px; /* Ubah ukuran teks tombol */
-                                                        padding: 3px 15px; /* Ubah padding tombol */
-                                                        border: none; /* Hapus border */
-                                                        cursor: pointer; /* Ubah tampilan kursor saat mengarahkan ke tombol */}
-                                                        </style><button id="tombol">Periksa</button><script> document.getElementById("tombol").addEventListener("click", function() {window.location.href = "http://127.0.0.1:8000/dbpengajuan";});
-                                                      </script>
-                                                    </div></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="text-align: center">2</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="text-align: center">3</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="text-align: center">4</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="text-align: center">5</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="text-align: center">6</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="text-align: center">7</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="text-align: center">8</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="text-align: center">9</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="text-align: center">10</td>
-                                                        <td></td>
+                                                        <td style="text-align: center"></td>
                                                         <td></td>
                                                         <td></td>
                                                         <td></td>
@@ -270,23 +178,98 @@
                                                         <td></td>
                                                     </tr>
                                                 </tbody>
-
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="text-align: center"></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="text-align: center"></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="text-align: center"></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="text-align: center"></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="text-align: center"></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="text-align: center"></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="text-align: center"></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="text-align: center"></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
                                             </table>
-                                        </div>
+                                        </div >
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-
-
                     <script src="/assets/js/jquery-3.3.1.slim.min.js"></script>
                     <script src="/assets/js/popper.min.js"></script>
                     <script src="/assets/js/bootstrap.min.js"></script>
                     <script src="/assets/js/jquery-3.3.1.min.js"></script>
-                    <script src="/assets/js/script2.js"></script>
-
-
+                    <script src="/assets/js/script.js"></script>
+                    <script src="/assets/js/scripbtn.js"></script>
                     <script type="text/javascript">
                         $(document).ready(function() {
                             $(".xp-menubar").on('click', function() {
@@ -297,7 +280,6 @@
                             $('.xp-menubar,.body-overlay').on('click', function() {
                                 $("#sidebar,.body-overlay").toggleClass('show-nav');
                             });
-
                         });
                     </script>
         </body>

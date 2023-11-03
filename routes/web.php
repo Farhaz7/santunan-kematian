@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DataDapatSantunanController;
+use App\Http\Controllers\DataPengajuanController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\InputProfileController;
@@ -40,11 +42,10 @@ route::get('profil', [ProfilController::class, 'profil'])->name('profil');
 
 route::get('upload', [UploadBerkasController::class, 'upload'])->name('upload');
 
-
 route::post('/simpan-data', [ProfilController::class, 'store'])->name('simpan-data');
 
 Route::get('dbadmin', [LoginController::class, 'index'])->name('index');
 
+Route::get('dbpengajuan', [DataPengajuanController::class, 'dbpengajuan'])->name('dbpengajuan');
 
-
-
+Route::get('dbdapatsantunan', [DataDapatSantunanController::class, 'dbdapatsantunan'])->name('dbdapatsantunan');
