@@ -85,20 +85,9 @@
                             <div class="xp-menubar">
                                 <span class="material-icons text-white">signal_cellular_alt</span>
                             </div>
-
                         </div>
-
                         <div class="col-md-5 col-lg-3 order-3 order-md-2">
                             <div class="xp-searchbar">
-                                <form>
-                                    <div class="input-group">
-                                        <input type="search" class="form-control" placeholder="Search">
-                                        <div class="input-group-append">
-                                            <button class="btn" type="submit" id="button-addon2">Cari
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
                             </div>
                         </div>
                         <div class="col-10 col-md-6 col-lg-8 order-1 order-md-3">
@@ -176,17 +165,7 @@
                                                         <td style="text-align: center">12-07-23</td>
                                                         <td style="text-align: center">Yusuf</td>
                                                         <td style="text-align: center">15-11-23</td>
-                                                        <td><div class="button-container"> 
-                                                        <style> #tombol {
-                                                        background-color: #E5C3A6; /* Ubah warna latar belakang tombol */
-                                                        color: #fff; /* Ubah warna teks tombol */
-                                                        font-size: 18px; /* Ubah ukuran teks tombol */
-                                                        padding: 3px 15px; /* Ubah padding tombol */
-                                                        border: none; /* Hapus border */
-                                                        cursor: pointer; /* Ubah tampilan kursor saat mengarahkan ke tombol */}
-                                                        </style><button id="tombol">Periksa</button><script> document.getElementById("tombol").addEventListener("click", function() {window.location.href = "http://127.0.0.1:8000/dbpengajuan";});
-                                                      </script>
-                                                    </div></td>
+                                                        <td><a href="/dbpengajuan" class="btn btn-warning">periksa</a></td>
                                                     </tr>
                                                     <tr>
                                                         <td style="text-align: center">2</td>
@@ -194,8 +173,7 @@
                                                         <td></td>
                                                         <td></td>
                                                         <td></td>
-                                                        <td></td>
-                                                        <td></td>
+                                                        <td><td><a href="/dbpengajuan" class="btn btn-warning">periksa</a></td></td>
                                                     </tr>
                                                     <tr>
                                                         <td style="text-align: center">3</td>
@@ -204,7 +182,7 @@
                                                         <td></td>
                                                         <td></td>
                                                         <td></td>
-                                                        <td></td>
+                                                        <td><a href="/dbpengajuan" class="btn btn-warning">periksa</a></td>
                                                     </tr>
                                                     <tr>
                                                         <td style="text-align: center">4</td>
@@ -213,7 +191,7 @@
                                                         <td></td>
                                                         <td></td>
                                                         <td></td>
-                                                        <td></td>
+                                                        <td><a href="/dbpengajuan" class="btn btn-warning">periksa</a></td>
                                                     </tr>
                                                     <tr>
                                                         <td style="text-align: center">5</td>
@@ -222,7 +200,7 @@
                                                         <td></td>
                                                         <td></td>
                                                         <td></td>
-                                                        <td></td>
+                                                        <td><a href="/dbpengajuan" class="btn btn-warning">periksa</a></td>
                                                     </tr>
                                                     <tr>
                                                         <td style="text-align: center">6</td>
@@ -231,7 +209,7 @@
                                                         <td></td>
                                                         <td></td>
                                                         <td></td>
-                                                        <td></td>
+                                                        <td><a href="/dbpengajuan" class="btn btn-warning">periksa</a></td>
                                                     </tr>
                                                     <tr>
                                                         <td style="text-align: center">7</td>
@@ -240,7 +218,7 @@
                                                         <td></td>
                                                         <td></td>
                                                         <td></td>
-                                                        <td></td>
+                                                        <td><a href="/dbpengajuan" class="btn btn-warning">periksa</a></td>
                                                     </tr>
                                                     <tr>
                                                         <td style="text-align: center">8</td>
@@ -249,28 +227,9 @@
                                                         <td></td>
                                                         <td></td>
                                                         <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="text-align: center">9</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="text-align: center">10</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
+                                                        <td><a href="/dbpengajuan" class="btn btn-warning">periksa</a></td>
                                                     </tr>
                                                 </tbody>
-
                                             </table>
                                         </div>
                                     </div>

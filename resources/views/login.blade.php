@@ -25,13 +25,11 @@
                 <div class="card" style="border-radius: 2rem; height: 540px; background-color: rgba(255, 255, 255, 0.927);">
                 <div class="row g-0">
                   <div class="col-md-5 col-lg-5 d-none d-md-block">
-                    <img src="assets/img/bjb.png" style="height: 550px; align-items-center;" class="mx-auto"
+                    <img src="assets/img/bjb.png" style="height: 550px;" class="mx-auto"
                       alt="login form" class="img-fluid" style="border-radius: rem 0 0 1rem;" />
                   </div>
                   <div class="col-md-6 col-lg-7 d-flex align-items-center">
                     <div class="card-body p-4 p-lg-5" style="color: rgb(134, 134, 134);">
-
-
                         <div class="d-flex align-items-center mb-3 pb-1 justify-content-center">
                             <i class="fas fa-cubes fa-2x me-3" style="color: #ffff;"></i>
                             <div class="text-center">
@@ -45,8 +43,6 @@
                                 <span class="h1 fw-bold mb-0 custom-font">Santunan Kematian</span>
                             </div>
                         </div>
-
-
                         <form action="{{ route('actionlogin') }}" method="post">
 
                         @if(session('error'))

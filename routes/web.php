@@ -49,3 +49,5 @@ Route::get('dbadmin', [LoginController::class, 'index'])->name('index');
 Route::get('dbpengajuan', [DataPengajuanController::class, 'dbpengajuan'])->name('dbpengajuan');
 
 Route::get('dbdapatsantunan', [DataDapatSantunanController::class, 'dbdapatsantunan'])->name('dbdapatsantunan');
+
+

@@ -141,16 +141,11 @@
 
                                             </ul>
                                         </li>
-
-
                                     </ul>
                                 </nav>
                             </div>
                         </div>
-
                     </div>
-
-
                 </div>
             </div>
 
@@ -219,28 +214,21 @@
                                 <button type="submit" class="btn btn-success">Simpan Data</button>
                             </div>
                             </form>
-
                             <div class="col-md-12">
                                 <div class="table-wrapper">
-
                                 </div>
-
                             </div>
-
                             <script src="/assets/js/jquery-3.3.1.slim.min.js"></script>
                             <script src="/assets/js/popper.min.js"></script>
                             <script src="/assets/js/bootstrap.min.js"></script>
                             <script src="/assets/js/jquery-3.3.1.min.js"></script>
-
                             <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
                             <script>
                                 $(document).ready(function() {
                                     $('#kecamatan').change(function() {
                                         var selectedKecamatan = $(this).val();
                                         var kelurahanDropdown = $('#kelurahan');
-
                                         kelurahanDropdown.empty();
-
                                         if (selectedKecamatan === 'Kecamatan 1') {
                                             kelurahanDropdown.append('<option value="Kelurahan 1">Guntung ikat</option>');
                                             kelurahanDropdown.append('<option value="Kelurahan 2">Kemuning</option>');
@@ -270,9 +258,6 @@
                                     });
                                 });
                             </script>
-
-
-
                             <script type="text/javascript">
                                 $(document).ready(function() {
                                     $(".xp-menubar").on('click', function() {
@@ -315,7 +300,6 @@
                                 }
                             </script>
                             <script>
-                                < script >
                                     function validateForm() {
                                         var nikMeninggal = document.getElementById("nik_meninggal").value;
                                         var namaMeninggal = document.getElementById("nama_meninggal").value;
@@ -343,10 +327,6 @@
                                         return true; // Allow form submission if all data is filled
                                     }
                             </script>
-
-
-
-
 
 
 </body>

@@ -85,24 +85,12 @@
                             <div class="xp-menubar">
                                 <span class="material-icons text-white">signal_cellular_alt</span>
                             </div>
-
                         </div>
-
                         <div class="col-md-5 col-lg-3 order-3 order-md-2">
                             <div class="xp-searchbar">
-                                <form>
-                                    <div class="input-group">
-                                        <input type="search" class="form-control" placeholder="Search">
-                                        <div class="input-group-append">
-                                            <button class="btn" type="submit" id="button-addon2">Cari
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
+                               
                             </div>
                         </div>
-
-
                         <div class="col-10 col-md-6 col-lg-8 order-1 order-md-3">
                             <div class="xp-profilebar text-right">
                                 <nav class="navbar p-0">
@@ -139,7 +127,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="main-content sarat" style=" height: 708px;">
                 <div class="row">
                     <div class="col-md-12">
@@ -178,7 +165,7 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td style="text-align: center">Muh udin</td>
+                                                        <td style="text-align: center"></td>
                                                         <td></td>
                                                         <td></td>
                                                         <td></td>
