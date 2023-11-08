@@ -55,6 +55,6 @@ Route::get('berkasuser', [BerkasController::class, 'berkasuser'])->name('berkasu
 
 =======
 Route::get('dbpengajuan', [DataPengajuanController::class, 'dbpengajuan'])->name('dbpengajuan');
->>>>>>> aa0e7681c60ba29adc9bfd7f281983d411188f66
+
 
 Route::get('dbdapatsantunan', [DataDapatSantunanController::class, 'dbdapatsantunan'])->name('dbdapatsantunan');
