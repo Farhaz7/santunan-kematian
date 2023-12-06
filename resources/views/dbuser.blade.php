@@ -18,12 +18,6 @@
         .navbar {
             background-color: #359d24;
         }
-
-        .sarat {
-            background-color: #ffffff;
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
     </style>
 
 </head>
@@ -67,6 +61,9 @@
                     <a href="#homeSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
                             class="material-icons">upload_file</i>Tambahkan Berkas</a>
                     <ul class="collapse list-unstyled menu" id="homeSubmenu1">
+                        <li><a href="berkasuser"><i class="material-icons">arrow_right</i>Berkas</a></li>
+                    </ul>
+                    <ul class="collapse list-unstyled menu" id="homeSubmenu1">
                         <li><a href="upload"><i class="material-icons">arrow_right</i>Upload Berkas</a></li>
                     </ul>
                 </li>
@@ -94,8 +91,6 @@
                             <div class="xp-searchbar">
                                 <form>
                                     <div class="input-group">
-                                        {{-- <input type="search" class="form-control"
-                                placeholder="Search"> --}}
                                         <div class="input-group-append">
 
                                         </div>
@@ -115,9 +110,6 @@
                                             <a class="nav-link" href="#" data-toggle="dropdown">
                                                 <span class="material-icons">notifications</span>
                                             </a>
-                                            {{-- <ul class="dropdown-menu">
-                                   <li><a href="#">You Have New Messages</a></li>
-                                </ul> --}}
                                         </li>
 
 
@@ -154,43 +146,36 @@
                 </div>
             </div>
 
-            <!------top-navbar-end----------->
-
-
-            <!------main-content-start----------->
 
             <div class="main-content sarat" style=" height: 708px;">
-                <div class="isi-text text-center">
+                <div class="welcome text-center">
+                    <h5 style="font-size: 30px">Selamat Datang di Layanan Santunan Kematian</h5>
+                </div>
+                <div class="isi-text">
                     @section('konten')
                         <h5>Selamat Datang <b>{{ Auth::user()->name }}</b>, Anda Login sebagai
                             <b>{{ Auth::user()->role }}</b>.
                         </h5>
                     @show
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="table-wrapper">
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-wrapper">
+                            <div class="card-header">
                                 <table class="table table-bordered">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
-                                            <th>Nik yang meninggal</th>
-                                            <th>Nama yang meninggal</th>
-                                            <th>Tanggal meninggal</th>
+                                            <th style="text-align: center"><b>Status Berkas</th>
+                                            <th style="text-align: center"><b>Status Pengajuan</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>1</td>
-                                            <td>12345</td>
-                                            <td>John Doe</td>
-                                            <td>2023-10-25</td>
+                                            <td></td>
+                                            <td></td>
                                         </tr>
-                                        <!-- Add more table rows as needed -->
                                     </tbody>
-                                </table>
                             </div>
-                        </div>
-                    </div>
 
                             <script src="/assets/js/jquery-3.3.1.slim.min.js"></script>
                             <script src="/assets/js/popper.min.js"></script>
@@ -211,11 +196,6 @@
 
                                 });
                             </script>
-
-
-
-
-
 </body>
 
 </html>

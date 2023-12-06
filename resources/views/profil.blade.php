@@ -20,7 +20,7 @@
         }
 
         .sarat {
-            background-color: #ffffff;
+            background-color: #f3f3f3;
             background-size: cover;
             background-repeat: no-repeat;
         }
@@ -40,7 +40,8 @@
                 </div>
                 <h5
                     style="text-align: center; font-size: 22px; white-space: nowrap; font-family: 'Bebas Neue', sans-serif;">
-                    <span>Layanan<br>Santunan Kematian</span></h5>
+                    <span>Layanan<br>Santunan Kematian</span>
+                </h5>
             </div>
 
             <ul class="list-unstyled component m-0">
@@ -64,6 +65,9 @@
                 <li class="dropdown">
                     <a href="#homeSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
                             class="material-icons">upload_file</i>Tambahkan Berkas</a>
+                    <ul class="collapse list-unstyled menu" id="homeSubmenu1">
+                        <li><a href="berkasuser"><i class="material-icons">arrow_right</i>Berkas</a></li>
+                    </ul>
                     <ul class="collapse list-unstyled menu" id="homeSubmenu1">
                         <li><a href="upload"><i class="material-icons">arrow_right</i>Upload Berkas</a></li>
                     </ul>
@@ -154,12 +158,12 @@
 
             <!------main-content-start----------->
 
-            <div class="main-content sarat" style=" height: 708px;">
+            <div class="main-content sarat" style=" height: 730px;">
 
 
 
                 <div class="content">
-                    <h3>Data Profil</h3>
+                    <h3 style="padding-bottom: 0.5rem">Data Profil</h3>
                     <div class="card card-info card-outline">
                         <div class="card-header">
 
@@ -210,7 +214,7 @@
                                 <input type="text" id="kedudukan" name="kedudukan" class="form-control"
                                     placeholder="Kedudukan waris">
                             </div>
-                            <div class="form-group">
+                            <div class="form-group2">
                                 <button type="submit" class="btn btn-success">Simpan Data</button>
                             </div>
                             </form>
@@ -299,36 +303,6 @@
                                     return true; // Mengizinkan pengiriman formulir jika semua data diisi
                                 }
                             </script>
-                            <script>
-                                    function validateForm() {
-                                        var nikMeninggal = document.getElementById("nik_meninggal").value;
-                                        var namaMeninggal = document.getElementById("nama_meninggal").value;
-                                        var tglMeninggal = document.getElementById("tgl_meninggal").value;
-                                        var alamat = document.getElementById("alamat").value;
-                                        var nikAhwa = document.getElementById("nik_ahwa").value;
-                                        var namaAhwa = document.getElementById("nama_ahwa").value;
-                                        var kecamatan = document.getElementById("kecamatan").value;
-                                        var kelurahan = document.getElementById("kelurahan").value;
-
-                                        if (
-                                            nikMeninggal === "" ||
-                                            namaMeninggal === "" ||
-                                            tglMeninggal === "" ||
-                                            alamat === "" ||
-                                            nikAhwa === "" ||
-                                            namaAhwa === "" ||
-                                            kecamatan === "" ||
-                                            kelurahan === ""
-                                        ) {
-                                            alert("Harap isi semua data sebelum menyimpan!");
-                                            return false; // Prevent form submission if any field is empty
-                                        }
-
-                                        return true; // Allow form submission if all data is filled
-                                    }
-                            </script>
-
-
 </body>
 
 </html>

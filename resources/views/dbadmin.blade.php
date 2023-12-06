@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 
@@ -64,8 +65,13 @@
                     <a href="#homeSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
                             class="material-icons">dataset</i>Data</a>
                     <ul class="collapse list-unstyled menu" id="homeSubmenu1">
+<<<<<<< HEAD
+                        <li><a href="{{ route('pengajuan') }}"><i class="material-icons">arrow_right</i>Data Pengajuan</a></li>
+                        <li><a href="#"><i class="material-icons">arrow_right</i>Data Dapat Santunan</a></li>
+=======
                         <li><a href="{{route('dbpengajuan')}}"><i class="material-icons">arrow_right</i>Data Pengajuan</a></li>
                         <li><a href="{{route('dbdapatsantunan')}}"><i class="material-icons">arrow_right</i>Data Dapat Santunan</a></li>
+>>>>>>> aa0e7681c60ba29adc9bfd7f281983d411188f66
                     </ul>
                 </li>
 
@@ -114,8 +120,10 @@
                                                 <img src="img/user.jpg" style="width:40px; border-radius:50%;" />
                                                 <span class="xp-user-live"></span></a>
                                             <ul class="dropdown-menu small-menu">
-                                                <li><a href="#"><span class="material-icons">settings</span>Settings</a></li>
-                                                <li><a href="{{ route('actionlogout') }}"><span class="material-icons">logout</span>Keluar</a></li>
+                                                <li><a href="#"><span
+                                                            class="material-icons">settings</span>Settings</a></li>
+                                                <li><a href="{{ route('actionlogout') }}"><span
+                                                            class="material-icons">logout</span>Keluar</a></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -129,7 +137,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="xp-breadcrumbbar text-center">
-                            {{-- <h4 class="page-title">Dashboard Admin</h4> --}}
+                            <h4 class="page-title">Dashboard Admin</h4>
                             <div class="main-content text-center">
                                 @section('konten')
                                     <h5>Selamat Datang <b>{{ Auth::user()->name }}</b>, Anda Login sebagai
@@ -141,7 +149,13 @@
                         </div>
                         <div class="table-wrapper">
                             <div class="content">
+<<<<<<< HEAD
+                                <h4 style="background-color: #f3f3f3; padding: 10px; margin: 0; border-radius: 0px; display: flex; align-items: center;">
+                                    <i class="material-icons" style="font-size: 30px; vertical-align: middle;">dataset</i>Data Pengajuan
+                                </h4>
+=======
                                 <h4 style="background-color: #f3f3f3; padding: 10px; margin: 0; border-radius: 0px;"><i class="material-icons">dataset</i>Pengajuan Masuk</h4>
+>>>>>>> aa0e7681c60ba29adc9bfd7f281983d411188f66
                                 <div class="card card-info card-outline">
                                     <div class="card-body">
                                         <div class="table-responsive">
@@ -152,20 +166,31 @@
                                                         <th style="text-align: center"><b>Nik yang meninggal</th>
                                                         <th style="text-align: center"><b>Nama yang meninggal</th>
                                                         <th style="text-align: center"><b>Tanggal meninggal</th>
+<<<<<<< HEAD
+                                                        <th style="text-align: center"><b>Status Pengajuan</th>
+=======
                                                         <th style="text-align: center"><b>Nama ahli waris</th>
                                                         <th style="text-align: center"><b>Tanggal pengajuan</th>
                                                         <th style="text-align: center"><b>Cek Kelengkapan Berkas</th>
+>>>>>>> aa0e7681c60ba29adc9bfd7f281983d411188f66
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <tr>
                                                         <td style="text-align: center">1</td>
+<<<<<<< HEAD
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+=======
                                                         <td style="text-align: center">63012376239236</td>
                                                         <td style="text-align: center">Baharuddin</td>
                                                         <td style="text-align: center">12-07-23</td>
                                                         <td style="text-align: center">Yusuf</td>
                                                         <td style="text-align: center">15-11-23</td>
                                                         <td><a href="/dbpengajuan" class="btn btn-warning">periksa</a></td>
+>>>>>>> aa0e7681c60ba29adc9bfd7f281983d411188f66
                                                     </tr>
                                                     <tr>
                                                         <td style="text-align: center">2</td>
@@ -173,7 +198,8 @@
                                                         <td></td>
                                                         <td></td>
                                                         <td></td>
-                                                        <td><td><a href="/dbpengajuan" class="btn btn-warning">periksa</a></td></td>
+                                                        <td></td>
+                                                        <td></td>
                                                     </tr>
                                                     <tr>
                                                         <td style="text-align: center">3</td>
@@ -181,8 +207,10 @@
                                                         <td></td>
                                                         <td></td>
                                                         <td></td>
+<<<<<<< HEAD
+=======
                                                         <td></td>
-                                                        <td><a href="/dbpengajuan" class="btn btn-warning">periksa</a></td>
+                                                        <td></td>
                                                     </tr>
                                                     <tr>
                                                         <td style="text-align: center">4</td>
@@ -190,8 +218,10 @@
                                                         <td></td>
                                                         <td></td>
                                                         <td></td>
+<<<<<<< HEAD
+=======
                                                         <td></td>
-                                                        <td><a href="/dbpengajuan" class="btn btn-warning">periksa</a></td>
+                                                        <td></td>
                                                     </tr>
                                                     <tr>
                                                         <td style="text-align: center">5</td>
@@ -199,8 +229,10 @@
                                                         <td></td>
                                                         <td></td>
                                                         <td></td>
+<<<<<<< HEAD
+=======
                                                         <td></td>
-                                                        <td><a href="/dbpengajuan" class="btn btn-warning">periksa</a></td>
+                                                        <td></td>
                                                     </tr>
                                                     <tr>
                                                         <td style="text-align: center">6</td>
@@ -208,8 +240,10 @@
                                                         <td></td>
                                                         <td></td>
                                                         <td></td>
+<<<<<<< HEAD
+=======
                                                         <td></td>
-                                                        <td><a href="/dbpengajuan" class="btn btn-warning">periksa</a></td>
+                                                        <td></td>
                                                     </tr>
                                                     <tr>
                                                         <td style="text-align: center">7</td>
@@ -217,8 +251,10 @@
                                                         <td></td>
                                                         <td></td>
                                                         <td></td>
+<<<<<<< HEAD
+=======
                                                         <td></td>
-                                                        <td><a href="/dbpengajuan" class="btn btn-warning">periksa</a></td>
+                                                        <td></td>
                                                     </tr>
                                                     <tr>
                                                         <td style="text-align: center">8</td>
@@ -226,8 +262,28 @@
                                                         <td></td>
                                                         <td></td>
                                                         <td></td>
+<<<<<<< HEAD
+=======
                                                         <td></td>
-                                                        <td><a href="/dbpengajuan" class="btn btn-warning">periksa</a></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align: center">9</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align: center">10</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -239,25 +295,34 @@
 
 
 
+<<<<<<< HEAD
+
+                        <script src="/assets/js/jquery-3.3.1.slim.min.js"></script>
+                        <script src="/assets/js/popper.min.js"></script>
+                        <script src="/assets/js/bootstrap.min.js"></script>
+                        <script src="/assets/js/jquery-3.3.1.min.js"></script>
+=======
                     <script src="/assets/js/jquery-3.3.1.slim.min.js"></script>
                     <script src="/assets/js/popper.min.js"></script>
                     <script src="/assets/js/bootstrap.min.js"></script>
                     <script src="/assets/js/jquery-3.3.1.min.js"></script>
                     <script src="/assets/js/script2.js"></script>
+>>>>>>> aa0e7681c60ba29adc9bfd7f281983d411188f66
 
 
-                    <script type="text/javascript">
-                        $(document).ready(function() {
-                            $(".xp-menubar").on('click', function() {
-                                $("#sidebar").toggleClass('active');
-                                $("#content").toggleClass('active');
+                        <script type="text/javascript">
+                            $(document).ready(function() {
+                                $(".xp-menubar").on('click', function() {
+                                    $("#sidebar").toggleClass('active');
+                                    $("#content").toggleClass('active');
+                                });
+
+                                $('.xp-menubar,.body-overlay').on('click', function() {
+                                    $("#sidebar,.body-overlay").toggleClass('show-nav');
+                                });
+
                             });
+                        </script>
+</body>
 
-                            $('.xp-menubar,.body-overlay').on('click', function() {
-                                $("#sidebar,.body-overlay").toggleClass('show-nav');
-                            });
-
-                        });
-                    </script>
-        </body>
 </html>

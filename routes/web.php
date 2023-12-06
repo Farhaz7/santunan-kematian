@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\BerkasController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DataDapatSantunanController;
 use App\Http\Controllers\DataPengajuanController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\InputProfileController;
+use App\Http\Controllers\PengajuanController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PerwalikotaController;
@@ -46,7 +48,14 @@ route::post('/simpan-data', [ProfilController::class, 'store'])->name('simpan-da
 
 Route::get('dbadmin', [LoginController::class, 'index'])->name('index');
 
+<<<<<<< HEAD
+Route::get('pengajuan', [PengajuanController::class, 'pengajuan'])->name('pengajuan');
+
+Route::get('berkasuser', [BerkasController::class, 'berkasuser'])->name('berkasuser');
+
+=======
 Route::get('dbpengajuan', [DataPengajuanController::class, 'dbpengajuan'])->name('dbpengajuan');
+
 
 Route::get('dbdapatsantunan', [DataDapatSantunanController::class, 'dbdapatsantunan'])->name('dbdapatsantunan');
 
