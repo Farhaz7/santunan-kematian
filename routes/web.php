@@ -15,6 +15,7 @@ use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SyaratController;
 use App\Http\Controllers\UploadBerkasController;
+use App\Http\Controllers\UploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,8 +28,8 @@ use App\Http\Controllers\UploadBerkasController;
 |
 */
 
-Route::get('home', [HomeController::class, 'index'])->name('home')->middleware('auth');
-Route::get('actionlogout', [LoginController::class, 'actionlogout'])->name('actionlogout')->middleware('auth');
+Route::get('home', [HomeController::class, 'index'])->name('home');
+Route::get('actionlogout', [LoginController::class, 'actionlogout'])->name('actionlogout');
 
 Route::get('register', [RegisterController::class, 'register'])->name('register');
 Route::post('register/action', [RegisterController::class, 'actionregister'])->name('actionregister');
@@ -40,20 +41,20 @@ route::get('syarat', [SyaratController::class, 'syarat'])->name('syarat');
 
 route::get('dbuser', [DashboardController::class, 'dbuser'])->name('dbuser');
 
-route::get('profil', [ProfilController::class, 'profil'])->name('profil');
+route::get('profil/{id}', [ProfilController::class, 'profil']);
 
 route::get('upload', [UploadBerkasController::class, 'upload'])->name('upload');
 
-route::post('/simpan-data', [ProfilController::class, 'store'])->name('simpan-data');
+route::post('/upload-file', [UploadController::class, 'upload']);
+route::put('/simpan-data/{id}', [ProfilController::class, 'SimpanData']);
 
 Route::get('dbadmin', [LoginController::class, 'index'])->name('index');
 
-<<<<<<< HEAD
+
 Route::get('pengajuan', [PengajuanController::class, 'pengajuan'])->name('pengajuan');
 
-Route::get('berkasuser', [BerkasController::class, 'berkasuser'])->name('berkasuser');
+Route::get('berkasuser/{id}', [BerkasController::class, 'berkasuser'])->name('berkasuser');
 
-=======
 Route::get('dbpengajuan', [DataPengajuanController::class, 'dbpengajuan'])->name('dbpengajuan');
 
 

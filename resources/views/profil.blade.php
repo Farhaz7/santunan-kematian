@@ -34,10 +34,19 @@
         <div class="body-overlay"></div>
         <div id="sidebar">
             <div class="sidebar-header">
-                <div class="image-container">
-                    <img src="/assets/img/bjb.png" style="height: 80px; width: 100px; text-align: center;"
-                        class="img-fluid" />
-                </div>
+            <div class="logo-container">
+         <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+        <div class="logo">
+            <img src="/assets/img/bjb.png" alt="Logo" class="front-face">
+            <img src="/assets/img/bjb.png" alt="Back of Logo" class="back-face">
+        </div>
+        </div>
+    <script src="script.js"></script>
+</body>
                 <h5
                     style="text-align: center; font-size: 22px; white-space: nowrap; font-family: 'Bebas Neue', sans-serif;">
                     <span>Layanan<br>Santunan Kematian</span>
@@ -58,7 +67,7 @@
                 </li>
 
                 <li class="Peraturan">
-                    <a href="/assets/pdf/perwalikota.pdf" class=""><i
+                    <a href="/assets/pdf/PERWALISMS-ON.pdf" class=""><i
                             class="material-icons">account_balance</i>Peraturan Walikota</a>
                 </li>
 
@@ -76,8 +85,6 @@
                 <li class="logout">
                     <a href="{{ route('actionlogout') }}" class=""><i class="material-icons">logout</i>Keluar</a>
                 </li>
-
-                <form action="{{ route('profil') }}" method="post">
 
 
             </ul>
@@ -123,8 +130,6 @@
                                    <li><a href="#">You Have New Messages</a></li>
                                 </ul> --}}
                                         </li>
-
-
                                         <li class="dropdown nav-item">
                                             <a class="nav-link" href="#" data-toggle="dropdown">
                                                 <img src="/assets/img/Dhea1R.png"
@@ -142,7 +147,6 @@
                                                     </a></li>
                                                 <li><a href="{{ route('actionlogout') }}"><span
                                                             class="material-icons">logout</span>Keluar</a></li>
-
                                             </ul>
                                         </li>
                                     </ul>
@@ -168,55 +172,89 @@
                         <div class="card-header">
 
                             <div class="profil-body">
-                                <form action="{{ route('simpan-data') }}" method="post"
-                                    onsubmit="return validateForm()">
+                                <form action="/simpan-data/{{$user-id}}" method="post"
+                                    onSubmit="return validateForm()">
+                                    @METHOD('PUT')
+                                    @csrf
+                                    <input type="hidden" name="id" value="{{$user->id}}">
                                     <div class="form-group">
-                                        <input type="text" id="nik_meninggal" name="nik_meninggal"
-                                            class="form-control" placeholder="NIK yang meninggal">
+                                        <input type="text" id="nik_meninggal" value="{{$user->nik_meninggal}}" name="nik_meninggal"
+                                            class="form-control" placeholder="NIK yang meninggal" disabled> 
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" id="nama_meninggal" name="nama_meninggal"
-                                            class="form-control" placeholder="Nama yang meninggal">
+                                        <input type="text" id="nama_meninggal" value="{{$user->nama_meninggal}}" name="nama_meninggal"
+                                            class="form-control" placeholder="Nama yang meninggal" disabled>
                                     </div>
-                                    <input type="date" id="tgl_meninggal" name="tgl_meninggal"
-                                        class="form-control">
+                                    <div class="form-group">
+                                        <input type="date" id="tgl_meninggal" value="{{$user->tgl_meninggal}}" name="tgl_meninggal"
+                                            class="form-control">
+                                            <br>
+                                   <div class="form-group">
+                                              <textarea type="text" id="alamat_meninggal" value="{{$user->alamat_meninggal}}"name="alamat_meninggal" class="form-control" placeholder="Alamat Lengkap Yang Meninggal"></textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                <select id="kecamatan_meninggal" name="kecamatan_meninggal" class="form-control">
+                                    <option value="" selected disabled>Pilih Kecamatan</option>
+                                    <option value="Banjarbaru Selatan">Banjarbaru Selatan</option>
+                                    <option value="Banjarbaru Utara">Banjarbaru Utara</option>
+                                    <option value="Cempaka">Cempaka</option>
+                                    <option value="Landasan Ulin">Landasan Ulin</option>
+                                    <option value="Liang Anggang">Liang Anggang</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select id="kelurahan_meninggal" name="kelurahan_meninggal" class="form-control">
+                                    <option value="">Pilih Kelurahan</option>
+                                </select>
+                            </div>
+                                    </div>
+                                    <input type="text" id="notelp_ahwa" value="{{$user->notelp_ahwar}}" name="notelp_ahwa"
+                                        class="form-control" placeholder="Nomor Telpon Ahli Waris">
                             </div>
                             <br>
                             <div class="form-group">
-                                <textarea type="text" id="alamat" name="alamat" class="form-control" placeholder="Alamat"></textarea>
+                                <textarea type="text" id="alamat_ahwa" value="{{$user->alamat_ahwa}}"name="alamat_ahwa" class="form-control" placeholder="Alamat Lengkap Ahli Waris"></textarea>
                             </div>
                             <div class="form-group">
-                                <input type="text" id="nik_ahwa" name="nik_ahwa" class="form-control"
+                                <input type="text" id="nik_ahwa" value="{{$user->nik_ahwa}}" name="nik_ahwa" class="form-control"
                                     placeholder="NIK ahli waris">
                             </div>
                             <div class="form-group">
-                                <input type="text" id="nama_ahwa" name="nama_ahwa" class="form-control"
+                                <input type="text" id="nama_ahwa" value="{{$user->nama_ahwa}}"name="nama_ahwa" class="form-control"
                                     placeholder="Nama ahli waris">
                             </div>
 
                             <div class="form-group">
-                                <select id="kecamatan" name="kecamatan" class="form-control">
-                                    <option value="">Pilih Kecamatan</option>
-                                    <option value="Kecamatan 1">Banjarbaru Selatan</option>
-                                    <option value="Kecamatan 2">Banjarbaru Utara</option>
-                                    <option value="Kecamatan 3">Cempaka</option>
-                                    <option value="Kecamatan 4">Landasan Ulin</option>
-                                    <option value="Kecamatan 5">Liang Anggang</option>
+                                <select id="kecamatan_ahwa" name="kecamatan_ahwa" class="form-control">
+                                    <option value="" selected disabled>Pilih Kecamatan</option>
+                                    <option value="Banjarbaru Selatan">Banjarbaru Selatan</option>
+                                    <option value="Banjarbaru Utara">Banjarbaru Utara</option>
+                                    <option value="Cempaka">Cempaka</option>
+                                    <option value="Landasan Ulin">Landasan Ulin</option>
+                                    <option value="Liang Anggang">Liang Anggang</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <select id="kelurahan" name="kelurahan" class="form-control">
+                                <select id="kelurahan_ahwa" name="kelurahan_ahwa" class="form-control">
                                     <option value="">Pilih Kelurahan</option>
                                 </select>
                             </div>
-
                             <div class="form-group">
-                                <input type="text" id="kedudukan" name="kedudukan" class="form-control"
-                                    placeholder="Kedudukan waris">
+                                <select id="kedudukan" name="kedudukan" class="form-control">
+                                    <option selected disabled>Kedudukan ahli waris</option>
+                                    <option value="Saudara Kandung">Saudara Kandung</option>
+                                    <option value="Anak Kandung">Anak Kandung</option>
+                                    <option value="Suami">Suami</option>
+                                    <option value="Istri">Istri</option>
+                                    <option value="Cucu">Cucu</option>
+                                    <option value="Pilihan Lain">Pilihan Lain</option>
+                                </select>
                             </div>
                             <div class="form-group2">
                                 <button type="submit" class="btn btn-success">Simpan Data</button>
                             </div>
+                            
                             </form>
                             <div class="col-md-12">
                                 <div class="table-wrapper">
@@ -227,37 +265,69 @@
                             <script src="/assets/js/bootstrap.min.js"></script>
                             <script src="/assets/js/jquery-3.3.1.min.js"></script>
                             <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                            <script src="/assets/js/script.js"></script>
                             <script>
                                 $(document).ready(function() {
-                                    $('#kecamatan').change(function() {
+                                    $('#kecamatan_meninggal').change(function() {
                                         var selectedKecamatan = $(this).val();
-                                        var kelurahanDropdown = $('#kelurahan');
+                                        var kelurahanDropdown = $('#kelurahan_meninggal');
                                         kelurahanDropdown.empty();
-                                        if (selectedKecamatan === 'Kecamatan 1') {
-                                            kelurahanDropdown.append('<option value="Kelurahan 1">Guntung ikat</option>');
-                                            kelurahanDropdown.append('<option value="Kelurahan 2">Kemuning</option>');
-                                            kelurahanDropdown.append('<option value="Kelurahan 4">Loktabat Selatan</option>');
-                                            kelurahanDropdown.append('<option value="Kelurahan 5">Sungai Besar</option>');
-                                        } else if (selectedKecamatan === 'Kecamatan 2') {
-                                            kelurahanDropdown.append('<option value="Kelurahan 1">Komet</option>');
-                                            kelurahanDropdown.append('<option value="Kelurahan 2">Loktabat Utara</option>');
-                                            kelurahanDropdown.append('<option value="Kelurahan 3">Mentaos</option>');
-                                            kelurahanDropdown.append('<option value="Kelurahan 4">Sungai Ulin</option>');
-                                        } else if (selectedKecamatan === 'Kecamatan 3') {
-                                            kelurahanDropdown.append('<option value="Kelurahan 1">Bangkal</option>');
-                                            kelurahanDropdown.append('<option value="Kelurahan 2">Cempaka</option>');
-                                            kelurahanDropdown.append('<option value="Kelurahan 3">Palam</option>');
-                                            kelurahanDropdown.append('<option value="Kelurahan 4">Sungai Tiung</option>');
-                                        } else if (selectedKecamatan === 'Kecamatan 4') {
-                                            kelurahanDropdown.append('<option value="Kelurahan 1">Guntung Manggis</option>');
-                                            kelurahanDropdown.append('<option value="Kelurahan 2">Guntung Payung</option>');
-                                            kelurahanDropdown.append('<option value="Kelurahan 3">Landasan Ulin Timur</option>');
-                                            kelurahanDropdown.append('<option value="Kelurahan 4">Syamsudin Noor</option>');
-                                        } else if (selectedKecamatan === 'Kecamatan 5') {
-                                            kelurahanDropdown.append('<option value="Kelurahan 1">Landasan Ulin Barat</option>');
-                                            kelurahanDropdown.append('<option value="Kelurahan 2">Landasan Ulin Selatan</option>');
-                                            kelurahanDropdown.append('<option value="Kelurahan 3">Landasan Ulin Tengah</option>');
-                                            kelurahanDropdown.append('<option value="Kelurahan 4">Landasan Ulin Utara</option>');
+                                        if (selectedKecamatan === 'Banjarbaru Selatan') {
+                                            kelurahanDropdown.append('<option value="Guntung ikat">Guntung ikat</option>');
+                                            kelurahanDropdown.append('<option value="Kemuning">Kemuning</option>');
+                                            kelurahanDropdown.append('<option value="Loktabat Selata">Loktabat Selatan</option>');
+                                            kelurahanDropdown.append('<option value="Sungai Besar">Sungai Besar</option>');
+                                        } else if (selectedKecamatan === 'Banjarbaru Utara') {
+                                            kelurahanDropdown.append('<option value="Komet">Komet</option>');
+                                            kelurahanDropdown.append('<option value="Loktabat Utara">Loktabat Utara</option>');
+                                            kelurahanDropdown.append('<option value="Mentaos">Mentaos</option>');
+                                            kelurahanDropdown.append('<option value="Sungai Ulin">Sungai Ulin</option>');
+                                        } else if (selectedKecamatan === 'Cempaka') {
+                                            kelurahanDropdown.append('<option value="Bangkal">Bangkal</option>');
+                                            kelurahanDropdown.append('<option value="Cempaka">Cempaka</option>');
+                                            kelurahanDropdown.append('<option value="Palam">Palam</option>');
+                                            kelurahanDropdown.append('<option value="Sungai Tiung">Sungai Tiung</option>');
+                                        } else if (selectedKecamatan === 'Landasan Ulin') {
+                                            kelurahanDropdown.append('<option value="Guntung Manggis">Guntung Manggis</option>');
+                                            kelurahanDropdown.append('<option value="Guntung Payun">Guntung Payung</option>');
+                                            kelurahanDropdown.append('<option value="Landasan Ulin Timur">Landasan Ulin Timur</option>');
+                                            kelurahanDropdown.append('<option value="Syamsudin Noor">Syamsudin Noor</option>');
+                                        } else if (selectedKecamatan === 'Liang Anggang') {
+                                            kelurahanDropdown.append('<option value="Landasan Ulin Barat">Landasan Ulin Barat</option>');
+                                            kelurahanDropdown.append('<option value="Landasan Ulin Selata">Landasan Ulin Selatan</option>');
+                                            kelurahanDropdown.append('<option value="Landasan Ulin Tengah">Landasan Ulin Tengah</option>');
+                                            kelurahanDropdown.append('<option value="Landasan Ulin Utara">Landasan Ulin Utara</option>');
+                                        }
+                                    });
+                                    $('#kecamatan_ahwa').change(function() {
+                                        var selectedKecamatan = $(this).val();
+                                        var kelurahanDropdown = $('#kelurahan_ahwa');
+                                        kelurahanDropdown.empty();
+                                        if (selectedKecamatan === 'Banjarbaru Selatan') {
+                                            kelurahanDropdown.append('<option value="Guntung ikat">Guntung ikat</option>');
+                                            kelurahanDropdown.append('<option value="Kemuning">Kemuning</option>');
+                                            kelurahanDropdown.append('<option value="Loktabat Selata">Loktabat Selatan</option>');
+                                            kelurahanDropdown.append('<option value="Sungai Besar">Sungai Besar</option>');
+                                        } else if (selectedKecamatan === 'Banjarbaru Utara') {
+                                            kelurahanDropdown.append('<option value="Komet">Komet</option>');
+                                            kelurahanDropdown.append('<option value="Loktabat Utara">Loktabat Utara</option>');
+                                            kelurahanDropdown.append('<option value="Mentaos">Mentaos</option>');
+                                            kelurahanDropdown.append('<option value="Sungai Ulin">Sungai Ulin</option>');
+                                        } else if (selectedKecamatan === 'Cempaka') {
+                                            kelurahanDropdown.append('<option value="Bangkal">Bangkal</option>');
+                                            kelurahanDropdown.append('<option value="Cempaka">Cempaka</option>');
+                                            kelurahanDropdown.append('<option value="Palam">Palam</option>');
+                                            kelurahanDropdown.append('<option value="Sungai Tiung">Sungai Tiung</option>');
+                                        } else if (selectedKecamatan === 'Landasan Ulin') {
+                                            kelurahanDropdown.append('<option value="Guntung Manggis">Guntung Manggis</option>');
+                                            kelurahanDropdown.append('<option value="Guntung Payun">Guntung Payung</option>');
+                                            kelurahanDropdown.append('<option value="Landasan Ulin Timur">Landasan Ulin Timur</option>');
+                                            kelurahanDropdown.append('<option value="Syamsudin Noor">Syamsudin Noor</option>');
+                                        } else if (selectedKecamatan === 'Liang Anggang') {
+                                            kelurahanDropdown.append('<option value="Landasan Ulin Barat">Landasan Ulin Barat</option>');
+                                            kelurahanDropdown.append('<option value="Landasan Ulin Selata">Landasan Ulin Selatan</option>');
+                                            kelurahanDropdown.append('<option value="Landasan Ulin Tengah">Landasan Ulin Tengah</option>');
+                                            kelurahanDropdown.append('<option value="Landasan Ulin Utara">Landasan Ulin Utara</option>');
                                         }
                                     });
                                 });
@@ -280,21 +350,31 @@
                                     var nikMeninggal = document.getElementById("nik_meninggal").value;
                                     var namaMeninggal = document.getElementById("nama_meninggal").value;
                                     var tglMeninggal = document.getElementById("tgl_meninggal").value;
-                                    var alamat = document.getElementById("alamat").value;
+                                    var alamatMeninggal = document.getElementById("alamat_meninggal").value;
+                                    var kecamatanMeninggal = document.getElementById("kecamatan_Meninggal").value;
+                                    var kelurahanMeninggal = document.getElementById("kelurahan_Meninggal").value;
+                                    var notelpAhwa = document.getElementById("notelp_ahwa").value;
+                                    var alamatAhwa = document.getElementById("alamat_ahwa").value;
                                     var nikAhwa = document.getElementById("nik_ahwa").value;
                                     var namaAhwa = document.getElementById("nama_ahwa").value;
-                                    var kecamatan = document.getElementById("kecamatan").value;
-                                    var kelurahan = document.getElementById("kelurahan").value;
+                                    var kecamatanAhwa = document.getElementById("kecamatan_Ahwa").value;
+                                    var kelurahanAhwa = document.getElementById("kelurahan_Ahwa").value;
+                                    var kedudukan = document.getElementById("kedudukan").value;
 
                                     if (
                                         nikMeninggal === "" ||
                                         namaMeninggal === "" ||
                                         tglMeninggal === "" ||
-                                        alamat === "" ||
+                                        alamatMeninggal === "" ||
+                                        kecamatanMeninggal === "" ||
+                                        kelurahanMeninggal === "" ||
+                                        notelpAhwa === "" ||
+                                        alamatAhwa === "" ||
                                         nikAhwa === "" ||
                                         namaAhwa === "" ||
-                                        kecamatan === "" ||
-                                        kelurahan === ""
+                                        kecamatanAhwa === "" ||
+                                        kelurahanAhwa === "" ||
+                                        kedudukan === "" 
                                     ) {
                                         alert("Harap isi semua data sebelum menyimpan!");
                                         return false; // Menghentikan pengiriman formulir jika ada yang belum diisi
@@ -303,6 +383,5 @@
                                     return true; // Mengizinkan pengiriman formulir jika semua data diisi
                                 }
                             </script>
-</body>
-
+     </body>
 </html>

@@ -19,18 +19,26 @@
             background-color: #359d24;
         }
     </style>
-
 </head>
-
 <body>
     <div class="wrapper">
         <div class="body-overlay"></div>
         <div id="sidebar">
             <div class="sidebar-header">
                 <div class="image-container">
-                    <img src="/assets/img/bjb.png" style="height: 80px; width: 100px; text-align: center;"
-                        class="img-fluid" />
-                </div>
+                <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+        <div class="logo">
+            <img src="/assets/img/bjb.png" alt="Logo" class="front-face">
+            <img src="/assets/img/bjb.png" alt="Back of Logo" class="back-face">
+        </div>
+        </div>
+    <script src="script.js"></script>
+</body>
+                 
                 <h5
                     style="text-align: center; font-size: 22px; white-space: nowrap; font-family: 'Bebas Neue', sans-serif;">
                     <span>Layanan<br>Santunan Kematian</span>
@@ -43,7 +51,7 @@
                 </li>
 
                 <li class="Profil">
-                    <a href="profil" class=""><i class="material-icons">account_circle</i>Profil</a>
+                    <a href="profil/{{$user->id}}" class=""><i class="material-icons">account_circle</i>Profil</a>
                 </li>
 
                 <li class="syarat">
@@ -51,17 +59,16 @@
                 </li>
 
                 <li class="peraturan">
-                    <a href="/assets/pdf/perwalikota.pdf" class=""><i
+                    <a href="/assets/pdf/PERWALISMS-ON.pdf" class=""><i
                             class="material-icons">account_balance</i>Peraturan Walikota</a>
                 </li>
-
 
 
                 <li class="dropdown">
                     <a href="#homeSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
                             class="material-icons">upload_file</i>Tambahkan Berkas</a>
                     <ul class="collapse list-unstyled menu" id="homeSubmenu1">
-                        <li><a href="berkasuser"><i class="material-icons">arrow_right</i>Berkas</a></li>
+                        <li><a href="berkasuser/{{$user}}"><i class="material-icons">arrow_right</i>Berkas</a></li>
                     </ul>
                     <ul class="collapse list-unstyled menu" id="homeSubmenu1">
                         <li><a href="upload"><i class="material-icons">arrow_right</i>Upload Berkas</a></li>
@@ -149,7 +156,7 @@
 
             <div class="main-content sarat" style=" height: 708px;">
                 <div class="welcome text-center">
-                    <h5 style="font-size: 30px">Selamat Datang di Layanan Santunan Kematian</h5>
+                    <h5 style="font-size: 30px">Selamat Datang di Layanan SMS - ON</h5>
                 </div>
                 <div class="isi-text">
                     @section('konten')
@@ -181,6 +188,7 @@
                             <script src="/assets/js/popper.min.js"></script>
                             <script src="/assets/js/bootstrap.min.js"></script>
                             <script src="/assets/js/jquery-3.3.1.min.js"></script>
+                            <script src="/assets/js/script.js"></script>
 
 
                             <script type="text/javascript">

@@ -34,6 +34,20 @@
         <div class="body-overlay"></div>
         <div id="sidebar">
             <div class="sidebar-header">
+            <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="logo-container">
+        <div class="logo">
+            <img src="/assets/img/bjb.png" alt="Logo" class="front-face">
+            <img src="/assets/img/bjb.png" alt="Back of Logo" class="back-face">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
                 <div class="image-container">
                     <img src="/assets/img/bjb.png" style="height: 80px; width: 100px; text-align: center;"
                         class="img-fluid" />
@@ -45,7 +59,7 @@
 
             <ul class="list-unstyled component m-0">
                 <li class="Dashboard">
-                    <a href="dbuser" class="dashboard"><i class="material-icons">home</i>Dashboard </a>
+                    <a href="home" class="dashboard"><i class="material-icons">home</i>Dashboard </a>
                 </li>
 
                 <li class="Profil">
@@ -57,7 +71,7 @@
                 </li>
 
                 <li class="Peraturan">
-                    <a href="/assets/pdf/perwalikota.pdf" class=""><i
+                    <a href="/assets/pdf/PERWALISMS-ON.pdf" class=""><i
                             class="material-icons">account_balance</i>Peraturan Walikota</a>
                 </li>
 
@@ -260,7 +274,7 @@
                             <section style="font-size: 15px"> 2. Surat Ahli Waris dari Kelurahan<section>
                                     <section style="font-size: 15px"> 3. Surat keterangan tidak mampu atau Kart
                                         KIS/KKS/Jamkesda DLL Khusus warga tidak mampu.<section>
-                                            <section style="font-size: 15px"> 4. Fotocopy E-KTP yang meninggal.
+                                            <section style="font-size: 15px"> 4. Fotocopy E-KTP yang meninggal dan Bagi anak yang belum ber E-KTP bisa diganti dengan akta kelahiran,<br> KIA atau surat keterangan Lahir dari Bidan / Dokter.
                                                 <section>
                                                     <section style="font-size: 15px"> 5. Fotocopy E-KTP Ahli waris.
                                                         <section>
@@ -268,11 +282,7 @@
                                                                 Keluarga.<section>
                                                                     <section style="font-size: 15px"> 7. Fotocopy Akte
                                                                         Kematian.<section>
-                                                                            <section style="font-size: 15px"> 8. Bagi
-                                                                                anak yang belum ber E-KTP bisa diganti
-                                                                                dengan aka kelahiran atau surat
-                                                                                keterangan lahir dari bidan/dokter.
-                                                                                <section>
+                                                                          
                 </div>
 
                 <br>
@@ -600,6 +610,7 @@
     <script src="/assets/js/popper.min.js"></script>
     <script src="/assets/js/bootstrap.min.js"></script>
     <script src="/assets/js/jquery-3.3.1.min.js"></script>
+    <script src="/assets/js/script.js"></script>
 
 
     <script type="text/javascript">

@@ -54,12 +54,10 @@
                     <span>Layanan<br>Santunan Kematian</span>
                 </h5>
             </div>
-
             <ul class="list-unstyled component m-0">
                 <li class="active">
                     <a href="dbadmin" class="dashboard"><i class="material-icons">home</i>Dashboard </a>
                 </li>
-
                 <li class="dropdown">
                     <a href="#homeSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
                             class="material-icons">dataset</i>Data</a>
@@ -68,11 +66,9 @@
                         <li><a href="{{route('dbdapatsantunan')}}"><i class="material-icons">arrow_right</i>Data Dapat Santunan</a></li>
                     </ul>
                 </li>
-
                 <li class="logout">
                     <a href="{{ route('actionlogout') }}" class=""><i class="material-icons">logout</i>Keluar</a>
                 </li>
-
             </ul>
         </div>
         <div id="content">
@@ -88,7 +84,6 @@
                         </div>
                         <div class="col-md-5 col-lg-3 order-3 order-md-2">
                             <div class="xp-searchbar">
-                               
                             </div>
                         </div>
                         <div class="col-10 col-md-6 col-lg-8 order-1 order-md-3">
@@ -103,13 +98,6 @@
                                                 <li><a href="#">You Have New Messages</a></li>
                                             </ul>
                                         </li>
-
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">
-                                                <span class="material-icons">question_answer</span>
-                                            </a>
-                                        </li>
-
                                         <li class="dropdown nav-item">
                                             <a class="nav-link" href="#" data-toggle="dropdown">
                                                 <img src="img/user.jpg" style="width:40px; border-radius:50%;" />
@@ -123,7 +111,6 @@
                                 </nav>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -159,14 +146,12 @@
                                                         <th style="text-align: center"><b>FC kartu keluarga</th>
                                                         <th style="text-align: center"><b>FC akte kematian</th>
                                                         <th style="text-align: center"><b>Bagi anak yang belum ber-KTP|akte kelahiran atau surat keterangan lahir dari bidan/dokter</th>
-                                                        <th style="text-align: center"><b>Foto ahli waris</th>
                                                         <th style="text-align: center"><b>Status(Lengkap/Tidak)</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <tr>
                                                         <td style="text-align: center"></td>
-                                                        <td></td>
                                                         <td></td>
                                                         <td></td>
                                                         <td></td>

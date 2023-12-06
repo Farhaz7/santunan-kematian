@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/assets/img/bjb.ico" />
-    <title>Data Dapat Santunan</title>
+    <title>Data Penerima Santunan</title>
     <style>
         .sarat {
             background-color: #f3f3f3;
@@ -65,7 +65,7 @@
                             class="material-icons">dataset</i>Data</a>
                     <ul class="collapse list-unstyled menu" id="homeSubmenu1">
                         <li><a href="{{route('dbpengajuan')}}"><i class="material-icons">arrow_right</i>Data Pengajuan</a></li>
-                        <li><a href="{{route('dbdapatsantunan')}}"><i class="material-icons">arrow_right</i>Data Dapat Santunan</a></li>
+                        <li><a href="{{route('dbdapatsantunan')}}"><i class="material-icons">arrow_right</i>Data Penerima Santunan</a></li>
                     </ul>
                 </li>
 
@@ -102,11 +102,6 @@
                                             </ul>
                                         </li>
 
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">
-                                                <span class="material-icons">question_answer</span>
-                                            </a>
-                                        </li>
 
                                         <li class="dropdown nav-item">
                                             <a class="nav-link" href="#" data-toggle="dropdown">
@@ -126,14 +121,14 @@
                 </div>
             </div>
 
-            <div class="main-content sarat" style=" height: 708px;">
+            <div class="main-content sarat" style=" height: 780px;">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="xp-breadcrumbbar text-center">
                             {{-- <h4 class="page-title">Dashboard Admin</h4> --}}
                             <div class="main-content text-center">
                                 @section('konten')
-                                    <h5> <b>{{ Auth::user()->name }}</b>, Anda sebagai
+                                       <h5> <b>{{ Auth::user()->name }}</b>, Anda sebagai
                                         <b>{{ Auth::user()->role }}</b>, Berikut Data Masyarakat yang mendapatkan Santunan Kematian.
                                     </h5>
                                 @show
@@ -142,7 +137,7 @@
                         </div>
                         <div class="table-wrapper">
                             <div class="content">
-                                <h4 style="background-color: #f3f3f3; padding: 10px; margin: 0; border-radius: 0px;"><i class="material-icons">dataset</i>Data Dapat Santunan</h4>
+                                <h4 style="background-color: #f3f3f3; padding: 10px; margin: 0; border-radius: 0px;"><i class="material-icons">dataset</i>Data Penerima Santunan</h4>
                                 <div class="card card-info card-outline">
                                     <div class="card-body">
                                         <div class="table-responsive">
@@ -154,6 +149,8 @@
                                                         <th style="text-align: center"><b>Nama Ahli Waris</th>
                                                         <th style="text-align: center"><b>Tgl Pengajuan</th>
                                                         <th style="text-align: center"><b>Tgl Pencairan</th>
+                                                        <th style="text-align: center"><b>Bukti Foto Ahli Waris
+                                                        </th>
                                                         <th style="text-align: center"><b>Status</th>
                                                     </tr>
                                                 </thead>
@@ -164,69 +161,13 @@
                                                         <td></td>
                                                         <td></td>
                                                         <td></td>
-                                                        <td style="text-align: center"> Data Lengkap</td>
+                                                        <td> <form action="upload.php" method="post" enctype="multipart/form-data">
+                                                          <input type="file" name="fileToUpload" id="fileToUpload">
+                                                       </form> </td>
+                                                        <td><div class="button-container"> <button id="yaButton" class="btn btn-primary">Proses</button> <button id="tidakButton" class="btn btn-danger">Tolak</button> <button type="submit" class="btn btn-success">Cair</button></div></td>
                                                     </tr>
                                                 </tbody>
-                                                <tbody>
-                                                    <tr>
-                                                        <td style="text-align: center"> </td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td style="text-align: center"> Data Lengkap</td>
-                                                    </tr>
-                                                </tbody>
-                                                <tbody>
-                                                    <tr>
-                                                        <td style="text-align: center"> </td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td style="text-align: center"> Data Lengkap</td>
-                                                    </tr>
-                                                </tbody>
-                                                <tbody>
-                                                    <tr>
-                                                        <td style="text-align: center"> </td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td style="text-align: center"> Data Lengkap</td>
-                                                    </tr>
-                                                </tbody>
-                                                <tbody>
-                                                    <tr>
-                                                        <td style="text-align: center"></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td style="text-align: center"> Data Lengkap</td>
-                                                    </tr>
-                                                </tbody>
-                                                <tbody>
-                                                    <tr>
-                                                        <td style="text-align: center"></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td style="text-align: center"> Data Lengkap</td>
-                                                    </tr>
-                                                </tbody>
-                                                <tbody>
-                                                    <tr>
-                                                        <td style="text-align: center"></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td style="text-align: center"> Data Lengkap</td>
-                                                    </tr>
-                                                </tbody>
+                                                
                                                 <tbody>
                                               </tbody>
                                             </table>
@@ -235,6 +176,15 @@
                                 </div>
                             </div>
                         </div>
+                        <nav aria-label="Page navigation example">
+         <ul class="pagination">
+       <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+       <li class="page-item"><a class="page-link" href="#">1</a></li>
+       <li class="page-item"><a class="page-link" href="#">2</a></li>
+       <li class="page-item"><a class="page-link" href="#">3</a></li>
+       <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+        </nav>
                     <script src="/assets/js/jquery-3.3.1.slim.min.js"></script>
                     <script src="/assets/js/popper.min.js"></script>
                     <script src="/assets/js/bootstrap.min.js"></script>

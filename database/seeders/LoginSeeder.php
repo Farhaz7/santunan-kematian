@@ -6,6 +6,7 @@ use App\Models\User as ModelsUser;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Foundation\Auth\User;
+use Illuminate\Support\Facades\Hash;
 
 class LoginSeeder extends Seeder
 {
@@ -18,17 +19,12 @@ class LoginSeeder extends Seeder
     {
         $userData = [
             [
-                'name'=>'admin',
+                'nama_meninggal'=>'admin',
                 'email'=>'adminkesra@gamil.com',
-                'role'=>'admin',
-                'password'=>bcrypt('123456')
+                'nik_meninggal' => '12345',
+                'role'=>'1',
+                'password'=>Hash::make('123456')
             ],
-            [
-                'name'=>'user',
-                'email'=>'user@gmail.com',
-                'role'=>'user',
-                'password'=>bcrypt('123456')
-            ]
         ];
 
         foreach($userData as $key => $val){

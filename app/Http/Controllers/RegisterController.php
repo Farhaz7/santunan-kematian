@@ -17,27 +17,24 @@ class RegisterController extends Controller
 
     public function actionregister(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'email' => 'required|email|unique:users',
-            'name' => 'required|unique:users',
-            'password' => 'required|min:6',
-            'role' => 'required',
-        ]);
+        // $validator = Validator::make($request->all(), [
+        //     'nik_meninggal' => 'required',
+        //     'nama_meninggal' => 'required',
+        //     'password' => 'required|min:6',
+        // ]);
 
-        if ($validator->fails()) {
-            // Redirect back with validation errors
-            return redirect('register')
-                ->withErrors($validator)
-                ->withInput();
-        }
+        // if ($validator->fails()) {
+        //     // Redirect back with validation errors
+        //     return redirect()->back()
+        //         ->withErrors($validator)
+        //         ->withInput();
+        // }
 
         // Create a new user
         $user = User::create([
-            'email' => $request->email,
-            'name' => $request->name,
+            'nik_meninggal' => $request->nik,
+            'nama_meninggal' => $request->name,
             'password' => Hash::make($request->password),
-            'role' => $request->role,
-            'active' => 1
         ]);
 
 

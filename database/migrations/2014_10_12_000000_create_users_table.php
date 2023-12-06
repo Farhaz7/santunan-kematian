@@ -15,12 +15,23 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->enum('role',['admin','user'])->default('user');
+            $table->string('role',1)->default('2');
+            $table->string('nama_meninggal');
+            $table->string('nik_meninggal');
             $table->string('password');
-            $table->rememberToken();
+            $table->string('email')->nullable();
+            $table->string('tgl_meninggal')->nullable();
+            $table->string('alamat_meninggal')->nullable();
+            $table->string('kelurahan_meninggal')->nullable();
+            $table->string('kecamatan_meninggal')->nullable();
+            $table->string('alamat_ahwa')->nullable();
+            $table->string('notelp_ahwa')->nullable();
+            $table->string('nik_ahwa')->nullable();
+            $table->string('nama_ahwa')->nullable();
+            $table->string('kelurahan_ahwa')->nullable();
+            $table->string('kecamatan_ahwa')->nullable();
+            $table->string('kedudukan')->nullable();
+            $table->string('aktivasi')->default('0');
             $table->timestamps();
         });
     }

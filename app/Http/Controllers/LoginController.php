@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session; // Make sure to import Session
+use Yoeunes\Toastr\Facades\Toastr;
 
 class LoginController extends Controller
 {
@@ -20,16 +21,18 @@ class LoginController extends Controller
     public function actionlogin(Request $request)
     {
         $data = [
-            'email' => $request->input('email'),
+            'nik_meninggal' => $request->input('nik'),
             'password' => $request->input('password'),
         ];
 
         if (Auth::attempt($data)) {
             $user_role=Auth::user()->role;
-                if($user_role=="admin"){
+                if($user_role=='1'){
+                    toastr()->success("Berhasil Login");
                     return view('/dbadmin');
                 }
-                else if($user_role=="user"){
+                else if($user_role=='2'){
+                    toastr()->success("Berhasil Login");
                     return redirect('home');
                 }
         } else {
