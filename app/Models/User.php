@@ -55,4 +55,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function uploadBerkas()
+    {
+        return $this->hasOne(UploadBerkasUsers::class, 'user_id');
+    }
 }
+

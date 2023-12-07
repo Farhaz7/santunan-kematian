@@ -8,10 +8,12 @@ use Illuminate\Support\Facades\DB;
 
 class ProfilController extends Controller
 {
-    function profil($id){
+    public function profil($id)
+    {
         $user = User::find($id);
         return view('profil',compact('user'));
-}
+    }
+    
     public function SimpanData(Request $request,$id)
     {
         $data = User::findOrFail($id);

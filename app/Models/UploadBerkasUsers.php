@@ -24,4 +24,8 @@ class UploadBerkasUsers extends Model
     'status_pengajuan', 
     'keterangan_pengajuan',
    ];
+   public function user()
+    {
+        return $this->hasOne(User::class, 'user_id','id');
+    }
 }

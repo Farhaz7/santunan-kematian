@@ -13,6 +13,12 @@ class HomeController extends Controller
         $user=Auth::user();
         $id=$user->id;
         $berkas=UploadBerkasUsers::find($id);
-        return view('home',compact('user','berkas'));
+        return view('dbuser',compact('user','berkas'));
+    }
+
+    public function index_admin()
+    {
+                $usersWithUploads = UploadBerkasUsers::all();
+                return view('dbadmin', compact('usersWithUploads'));
     }
 }

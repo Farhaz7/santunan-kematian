@@ -17,6 +17,8 @@ use App\Http\Controllers\SyaratController;
 use App\Http\Controllers\UploadBerkasController;
 use App\Http\Controllers\UploadController;
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,12 +50,12 @@ route::get('upload', [UploadBerkasController::class, 'upload'])->name('upload');
 route::post('/upload-file', [UploadController::class, 'upload']);
 route::put('/simpan-data/{id}', [ProfilController::class, 'SimpanData']);
 
-Route::get('dbadmin', [LoginController::class, 'index'])->name('index');
+Route::get('dbadmin', [HomeController::class, 'index_admin'])->name('dbadmin');
 
 
 Route::get('pengajuan', [PengajuanController::class, 'pengajuan'])->name('pengajuan');
 
-Route::get('berkasuser/{id}', [BerkasController::class, 'berkasuser'])->name('berkasuser');
+Route::get('berkasuser', [BerkasController::class, 'berkasuser'])->name('berkasuser');
 
 Route::get('dbpengajuan', [DataPengajuanController::class, 'dbpengajuan'])->name('dbpengajuan');
 

@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 
@@ -11,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/assets/img/bjb.ico" />
     <title>Dashboard Admin</title>
@@ -26,32 +25,21 @@
 </head>
 
 <body>
+
     <div class="wrapper">
         <div class="body-overlay"></div>
         <div id="sidebar">
             <div class="sidebar-header">
-            <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="logo-container">
-        <div class="logo">
-            <img src="/assets/img/bjb.png" alt="Logo" class="front-face">
-            <img src="/assets/img/bjb.png" alt="Back of Logo" class="back-face">
-        </div>
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
+                    <div class="logo-container">
+                        <div class="logo">
+                            <img src="/assets/img/bjb.png" alt="Logo" class="front-face">
+                            <img src="/assets/img/bjb.png" alt="Back of Logo" class="back-face">
+                        </div>
+                    </div>
                 <div class="image-container">
-                    <img src="/assets/img/bjb.png" style="height: 80px; width: 100px; text-align: center;"
-                        class="img-fluid" />
+                    <img src="/assets/img/bjb.png" style="height: 80px; width: 100px; text-align: center;" class="img-fluid" />
                 </div>
-                <h5
-                    style="text-align: center; font-size: 22px; white-space: nowrap; font-family: 'Bebas Neue', sans-serif;">
+                <h5 style="text-align: center; font-size: 22px; white-space: nowrap; font-family: 'Bebas Neue', sans-serif;">
                     <span>Layanan<br>Santunan Kematian</span>
                 </h5>
             </div>
@@ -62,8 +50,7 @@
                 </li>
 
                 <li class="dropdown">
-                    <a href="#homeSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
-                            class="material-icons">dataset</i>Data</a>
+                    <a href="#homeSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="material-icons">dataset</i>Data</a>
                     <ul class="collapse list-unstyled menu" id="homeSubmenu1">
                         <li><a href="{{route('dbpengajuan')}}"><i class="material-icons">arrow_right</i>Data Pengajuan</a></li>
                         <li><a href="{{route('dbdapatsantunan')}}"><i class="material-icons">arrow_right</i>Data Dapat Santunan</a></li>
@@ -126,9 +113,8 @@
                             <h4 class="page-title">Dashboard Admin</h4>
                             <div class="main-content text-center">
                                 @section('konten')
-                                    <h5>Selamat Datang <b>{{ Auth::user()->name }}</b>, Anda Login sebagai
-                                        <b>{{ Auth::user()->role }}</b>.
-                                    </h5>
+                                <h5>Selamat Datang, Anda Login sebagai Admin
+                                </h5>
                                 @show
                             </div>
                             </ol>
@@ -146,75 +132,31 @@
                                                         <th style="text-align: center"><b>Nik yang meninggal</th>
                                                         <th style="text-align: center"><b>Nama yang meninggal</th>
                                                         <th style="text-align: center"><b>Tanggal meninggal</th>
+                                                        <th style="text-align: center"><b>Alamat yang Meninggal</th>
+                                                        <th style="text-align: center"><b>No telp Ahli Waris</th>
+                                                        <th style="text-align: center"><b>ALamat Ahli Waris</th>
+                                                        <th style="text-align: center"><b>NIK ahli waris</th>
                                                         <th style="text-align: center"><b>Nama ahli waris</th>
                                                         <th style="text-align: center"><b>Tanggal pengajuan</th>
                                                         <th style="text-align: center"><b>Cek Kelengkapan Berkas</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+                                                    @foreach($usersWithUploads as $item)
                                                     <tr>
-                                                        <td style="text-align: center">1</td>
-                                                        <td style="text-align: center"></td>
-                                                        <td style="text-align: center"></td>
-                                                        <td style="text-align: center"></td>
-                                                        <td style="text-align: center"></td>
-                                                        <td style="text-align: center"></td>
+                                                        <td style="text-align: center">{{$loop->iteration}}</td>
+                                                        <td style="text-align: center">{{$item->nik_meninggal}}</td>
+                                                        <td style="text-align: center">{{$item->nama_meninggal}}</td>
+                                                        <td style="text-align: center">{{$item->tgl_meninggal}}</td>
+                                                        <td style="text-align: center">{{$item->alamat_meninggal}}</td>
+                                                        <td style="text-align: center">{{$item->notelp_ahwa}}</td>
+                                                        <td style="text-align: center">{{$item->alamat_ahwa}}</td>
+                                                        <td style="text-align: center">{{$item->nik_ahwa}}</td>
+                                                        <td style="text-align: center">{{$item->nama_ahwa}}</td>
+                                                        <td style="text-align: center">{{$item->created_at->isoFormat('D MMMM Y')}}</td>
                                                         <td><a href="/dbpengajuan" class="btn btn-warning">periksa</a></td>
                                                     </tr>
-                                                    <tr>
-                                                        <td style="text-align: center">2</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="text-align: center">3</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="text-align: center">4</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="text-align: center">5</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="text-align: center">6</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="text-align: center">7</td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
+                                                    @endforeach
                                                 </tbody>
                                             </table>
                                         </div>
@@ -223,24 +165,25 @@
                             </div>
                         </div>
                         <nav aria-label="Page navigation example">
-       <ul class="pagination">
-    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
-         </nav>
+                            <ul class="pagination">
+                                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                            </ul>
+                        </nav>
+
                         <script src="/assets/js/jquery-3.3.1.slim.min.js"></script>
                         <script src="/assets/js/popper.min.js"></script>
                         <script src="/assets/js/bootstrap.min.js"></script>
                         <script src="/assets/js/jquery-3.3.1.min.js"></script>
-
-                    <script src="/assets/js/jquery-3.3.1.slim.min.js"></script>
-                    <script src="/assets/js/popper.min.js"></script>
-                    <script src="/assets/js/bootstrap.min.js"></script>
-                    <script src="/assets/js/jquery-3.3.1.min.js"></script>
-                    <script src="/assets/js/script2.js"></script>
+                        <script src="script.js"></script>
+                        <script src="/assets/js/jquery-3.3.1.slim.min.js"></script>
+                        <script src="/assets/js/popper.min.js"></script>
+                        <script src="/assets/js/bootstrap.min.js"></script>
+                        <script src="/assets/js/jquery-3.3.1.min.js"></script>
+                        <script src="/assets/js/script2.js"></script>
 
 
 

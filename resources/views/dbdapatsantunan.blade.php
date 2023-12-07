@@ -128,8 +128,7 @@
                             {{-- <h4 class="page-title">Dashboard Admin</h4> --}}
                             <div class="main-content text-center">
                                 @section('konten')
-                                       <h5> <b>{{ Auth::user()->name }}</b>, Anda sebagai
-                                        <b>{{ Auth::user()->role }}</b>, Berikut Data Masyarakat yang mendapatkan Santunan Kematian.
+                                       <h5> Anda sebagai Admin, Berikut Data Masyarakat yang mendapatkan Santunan Kematian.
                                     </h5>
                                 @show
                             </div>
@@ -149,22 +148,24 @@
                                                         <th style="text-align: center"><b>Nama Ahli Waris</th>
                                                         <th style="text-align: center"><b>Tgl Pengajuan</th>
                                                         <th style="text-align: center"><b>Tgl Pencairan</th>
-                                                        <th style="text-align: center"><b>Bukti Foto Ahli Waris
-                                                        </th>
+                                                        <th style="text-align: center"><b>Bukti Foto Ahli Waris </th>
                                                         <th style="text-align: center"><b>Status</th>
-                                                    </tr>
                                                 </thead>
                                                 <tbody>
+                                                @foreach($usersWithUploads as $user)
+                                                    @if($user->uploadBerkas)
                                                     <tr>
                                                         <td style="text-align: center"></td>
                                                         <td></td>
                                                         <td></td>
                                                         <td></td>
-                                                        <td></td>
+                                                        <td><div class="form-group">
+                                                                <input type="date" id="" value="" name="tgl_meninggal"
+                                                             class="form-control"></td>
                                                         <td> <form action="upload.php" method="post" enctype="multipart/form-data">
                                                           <input type="file" name="fileToUpload" id="fileToUpload">
                                                        </form> </td>
-                                                        <td><div class="button-container"> <button id="yaButton" class="btn btn-primary">Proses</button> <button id="tidakButton" class="btn btn-danger">Tolak</button> <button type="submit" class="btn btn-success">Cair</button></div></td>
+                                                        <td><div class="button-container"> <button id="okButton" class="btn btn-primary">Dicairkan</button> <button id="noButton" class="btn btn-danger">Diperbaiki</button></div></td>
                                                     </tr>
                                                 </tbody>
                                                 
@@ -191,6 +192,7 @@
                     <script src="/assets/js/jquery-3.3.1.min.js"></script>
                     <script src="/assets/js/script.js"></script>
                     <script src="/assets/js/scripbtn.js"></script>
+                    <script src="/assets/js/button.js"></script>
                     <script type="text/javascript">
                         $(document).ready(function() {
                             $(".xp-menubar").on('click', function() {
