@@ -6,8 +6,7 @@
         </div>
         <div class="isi-text">
             @section('konten')
-            <h5>Selamat Datang <b>{{ Auth::user()->name }}</b>, Anda Login sebagai
-                <b>{{ Auth::user()->role }}</b>.
+            <h5>Selamat Datang, Anda Login sebagai User
             </h5>
             @show
         </div>

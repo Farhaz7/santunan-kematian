@@ -152,8 +152,6 @@
                                                         <th style="text-align: center"><b>Status</th>
                                                 </thead>
                                                 <tbody>
-                                                @foreach($usersWithUploads as $user)
-                                                    @if($user->uploadBerkas)
                                                     <tr>
                                                         <td style="text-align: center"></td>
                                                         <td></td>
@@ -168,7 +166,6 @@
                                                         <td><div class="button-container"> <button id="okButton" class="btn btn-primary">Dicairkan</button> <button id="noButton" class="btn btn-danger">Diperbaiki</button></div></td>
                                                     </tr>
                                                 </tbody>
-                                                
                                                 <tbody>
                                               </tbody>
                                             </table>
