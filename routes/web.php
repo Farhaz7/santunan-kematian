@@ -48,12 +48,10 @@ route::post('/simpan-data', [ProfilController::class, 'store'])->name('simpan-da
 
 Route::get('dbadmin', [LoginController::class, 'index'])->name('index');
 
-<<<<<<< HEAD
 Route::get('pengajuan', [PengajuanController::class, 'pengajuan'])->name('pengajuan');
 
 Route::get('berkasuser', [BerkasController::class, 'berkasuser'])->name('berkasuser');
 
-=======
 Route::get('dbpengajuan', [DataPengajuanController::class, 'dbpengajuan'])->name('dbpengajuan');
 
 
