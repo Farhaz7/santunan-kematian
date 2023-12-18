@@ -38,7 +38,7 @@
                                     </tr>
                                     <tr>
                                         <td style="text-align: center">4.</td>
-                                        <td style="text-align: left">Fotocopy E-KTP yang meninggal dan Bagi anak yang belum ber E-KTP bisa diganti dengan akta kelahiran,
+                                        <td style="text-align: left">Foto E-KTP yang meninggal dan Bagi anak yang belum ber E-KTP bisa diganti dengan akta kelahiran,
                                                   KIA atau surat ket.Lahir dari Bidan / Dokter.</td>
                                         <td style="text-align: center">
                                         <a href="/storage/{{$data->fc_ktp_meninggal}}" target="_blank" class="btn btn-success">Lihat</a>
@@ -46,28 +46,28 @@
                                     </tr>
                                     <tr>
                                         <td style="text-align: center">5.</td>
-                                        <td style="text-align: left">Fotocopy E-KTP ahli waris</td>
+                                        <td style="text-align: left">Foto E-KTP ahli waris</td>
                                         <td style="text-align: center">
                                            <a href="/storage/{{$data->fc_ktp_ahwa}}" target="_blank" class="btn btn-success">Lihat</a>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td style="text-align: center">6.</td>
-                                        <td style="text-align: left">Fotocopy kartu keluarga Yang Meninggal</td>
+                                        <td style="text-align: left">Foto kartu keluarga Yang Meninggal</td>
                                         <td style="text-align: center">
                                             <a href="/storage/{{$data->fc_kk_meninggal}}" target="_blank" class="btn btn-success">Lihat</a>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td style="text-align: center">7.</td>
-                                        <td style="text-align: left">Fotocopy akte kematian</td>
+                                        <td style="text-align: left">Foto akte kematian</td>
                                         <td style="text-align: center">
                                             <a href="/storage/{{$data->fc_akte_meninggal}}" target="_blank" class="btn btn-success">Lihat</a>
                                         </td>                                       
                                     </tr>
                                     <tr>
                                         <td style="text-align: center">8.</td>
-                                        <td style="text-align: left">Fotocopy Kartu Keluarga Ahli Waris</td>
+                                        <td style="text-align: left">Foto Kartu Keluarga Ahli Waris</td>
                                         <td style="text-align: center">
                                             <a href="/storage/{{$data->fc_kk_ahwa}}" target="_blank" class="btn btn-success">Lihat</a>
                                         </td>                                       
@@ -76,9 +76,8 @@
                             </table>
 
                             <div class="form-group2">
-                                <a href="upload">
-                                    <button type="submit" class="btn btn-success" style="display: inline-block; margin-right: 10px;">Tambah Data</button>
+                            <a href="upload">
+                                     <button type="submit" class="btn btn-success">Edit Data</button>
                                 </a>
-                                <button type="submit" class="btn btn-success">Edit Data</button>
                             </div>
 @endsection

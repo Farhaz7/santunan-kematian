@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/assets/img/bjb.ico" />
     <title>Upload Berkas</title>
@@ -43,27 +43,27 @@
         <div class="body-overlay"></div>
         <div id="sidebar">
             <div class="sidebar-header">
-            <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="logo-container">
-        <div class="logo">
-            <img src="/assets/img/bjb.png" alt="Logo" class="front-face">
-            <img src="/assets/img/bjb.png" alt="Back of Logo" class="back-face">
-        </div>
-    </div>
-    <script src="script.js"></script>
-</body>
-              
+
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <link rel="stylesheet" href="styles.css">
+                </head>
+
+                <body>
+                    <div class="logo-container">
+                        <div class="logo">
+                            <img src="/assets/img/bjb.png" alt="Logo" class="front-face">
+                            <img src="/assets/img/bjb.png" alt="Back of Logo" class="back-face">
+                        </div>
+                    </div>
+                    <script src="script.js"></script>
+                </body>
+
                 <div class="image-container">
-                     <img src="/assets/img/bjb.png" style="height: 80px; width: 100px; text-align: center;"
-                        class="img-fluid" />
+                    <img src="/assets/img/bjb.png" style="height: 80px; width: 100px; text-align: center;" class="img-fluid" />
                 </div>
-                <h5
-                    style="text-align: center; font-size: 22px; white-space: nowrap; font-family: 'Bebas Neue', sans-serif;">
+                <h5 style="text-align: center; font-size: 22px; white-space: nowrap; font-family: 'Bebas Neue', sans-serif;">
                     <span>Layanan<br>Santunan Kematian</span>
                 </h5>
             </div>
@@ -82,13 +82,11 @@
                 </li>
 
                 <li class="Peraturan">
-                    <a href="/assets/pdf/PERWALISMS-ON.pdf" class=""><i
-                            class="material-icons">account_balance</i>Peraturan Walikota</a>
+                    <a href="/assets/pdf/PERWALISMS-ON.pdf" class=""><i class="material-icons">account_balance</i>Peraturan Walikota</a>
                 </li>
 
                 <li class="dropdown">
-                    <a href="#homeSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
-                            class="material-icons">upload_file</i>Tambahkan Berkas</a>
+                    <a href="#homeSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="material-icons">upload_file</i>Tambahkan Berkas</a>
                     <ul class="collapse list-unstyled menu" id="homeSubmenu1">
                         <li><a href="berkasuser"><i class="material-icons">arrow_right</i>Berkas</a></li>
                     </ul>
@@ -140,7 +138,7 @@
                                     <ul class="nav navbar-nav flex-row ml-auto">
                                         <li class="dropdown nav-item">
                                             <a class="nav-link" href="#" data-toggle="dropdown">
-                                                <span class="material-icons">notifications</span>
+                                                <!-- <span class="material-icons">notifications</span> -->
                                             </a>
                                             {{-- <ul class="dropdown-menu">
                                    <li><a href="#">You Have New Messages</a></li>
@@ -150,22 +148,14 @@
 
                                         <li class="dropdown nav-item">
                                             <a class="nav-link" href="#" data-toggle="dropdown">
-                                                <img src="/assets/img/Dhea1R.png"
-                                                    style="width:40px; border-radius:50%;" />
-                                                <span class="xp-user-live"></span>
+                                                <span class="material-icons">account_circle</span>
                                             </a>
                                             <ul class="dropdown-menu small-menu">
                                                 <li><a href="profil">
                                                         <span class="material-icons">person_outline</span>
                                                         Profile
                                                     </a></li>
-                                                <li><a href="#">
-                                                        <span class="material-icons">settings</span>
-                                                        Settings
-                                                    </a></li>
-                                                <li><a href="{{ route('actionlogout') }}"><span
-                                                            class="material-icons">logout</span>Keluar</a></li>
-
+                                                <li><a href="{{ route('actionlogout') }}"><span class="material-icons">logout</span>Keluar</a></li>
                                             </ul>
                                         </li>
 
@@ -192,7 +182,7 @@
                             <div class="card-header">
                                 <form action="/upload-file" method="POST" enctype="multipart/form-data">
                                     @csrf
-                                        <table class="table table-bordered">
+                                    <table class="table table-bordered">
                                         <thead>
                                             <tr>
                                                 <th style="text-align: center"><b>No</th>
@@ -205,14 +195,14 @@
                                                 <td style="text-align: center">1.</td>
                                                 <td style="text-align: left">Surat pengantar dari kelurahan</td>
                                                 <td style="text-align: center">
-                                                        <input type="file" name="surat_pengantar" id="fileToUpload">
+                                                    <input type="file" name="surat_pengantar" id="fileToUpload">
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td style="text-align: center">2.</td>
                                                 <td style="text-align: left">Surat ahli waris dari kelurahan</td>
                                                 <td style="text-align: center">
-                                                        <input type="file" name="surat_ahwa" id="fileToUpload">
+                                                    <input type="file" name="surat_ahwa" id="fileToUpload">
                                                 </td>
                                             </tr>
                                             <tr>
@@ -220,78 +210,78 @@
                                                 <td style="text-align: left">Surat keterangan tidak mampu atau kartu
                                                     KIS/KKS/BPJS/JAMKESDA DLL khusus untuk warga tidak mampu</td>
                                                 <td style="text-align: center">
-                                                        <input type="file" name="surat_tdk_mampu" id="fileToUpload">
+                                                    <input type="file" name="surat_tdk_mampu" id="fileToUpload">
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td style="text-align: center">4.</td>
-                                                <td style="text-align: left">Fotocopy E-KTP yang meninggal dan Bagi anak yang belum ber E-KTP bisa diganti dengan akta kelahiran,
-                                                        KIA atau surat ket.Lahir dari Bidan / Dokter.</td>
+                                                <td style="text-align: left">Foto E-KTP yang meninggal dan Bagi anak yang belum ber E-KTP bisa diganti dengan akta kelahiran,
+                                                    KIA atau surat ket.Lahir dari Bidan / Dokter.</td>
                                                 <td style="text-align: center">
-                                                        <input type="file" name="fc_ktp_meninggal" id="fileToUpload">
+                                                    <input type="file" name="fc_ktp_meninggal" id="fileToUpload">
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td style="text-align: center">5.</td>
-                                                <td style="text-align: left">Fotocopy E-KTP ahli waris </td>
+                                                <td style="text-align: left">Foto E-KTP ahli waris </td>
                                                 <td style="text-align: center">
-                                                        <input type="file" name="fc_ktp_ahwa" id="fileToUpload">
+                                                    <input type="file" name="fc_ktp_ahwa" id="fileToUpload">
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td style="text-align: center">6.</td>
-                                                <td style="text-align: left">Fotocopy kartu keluarga Yang Meninggal</td>
+                                                <td style="text-align: left">Foto kartu keluarga Yang Meninggal</td>
                                                 <td style="text-align: center">
-                                                        <input type="file" name="fc_kk_meninggal" id="fileToUpload">
-                                                </td>   
+                                                    <input type="file" name="fc_kk_meninggal" id="fileToUpload">
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td style="text-align: center">7.</td>
-                                                <td style="text-align: left">Fotocopy akte kematian</td>
+                                                <td style="text-align: left">Foto akte kematian</td>
                                                 <td style="text-align: center">
-                                                        <input type="file" name="fc_akte_meninggal" id="fileToUpload">
+                                                    <input type="file" name="fc_akte_meninggal" id="fileToUpload">
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td style="text-align: center">8.</td>
-                                                <td style="text-align: left">Fotocopy Kartu Keluarga Ahli Waris</td>
+                                                <td style="text-align: left">Foto Kartu Keluarga Ahli Waris</td>
                                                 <td style="text-align: center">
-                                                        <input type="file" name="fc_kk_ahwa" id="fileToUpload">
+                                                    <input type="file" name="fc_kk_ahwa" id="fileToUpload">
                                                 </td>
                                             </tr>
                                         </tbody>
                                     </table>
-                                
 
-                                <div class="form-group2">
-                                    <button type="submit" class="btn btn-success">Simpan Data</button>
+
+                                    <div class="form-group2">
+                                        <button type="submit" class="btn btn-success">Simpan Data</button>
+                                    </div>
+                                </form>
+
+                                <div class="col-md-12">
+                                    <div class="table-wrapper">
+                                    </div>
                                 </div>
-                            </form>
 
-                            <div class="col-md-12">
-                                <div class="table-wrapper">
-                                </div>
-                            </div>
-
-                            <script src="/assets/js/jquery-3.3.1.slim.min.js"></script>
-                            <script src="/assets/js/popper.min.js"></script>
-                            <script src="/assets/js/bootstrap.min.js"></script>
-                            <script src="/assets/js/jquery-3.3.1.min.js"></script>
+                                <script src="/assets/js/jquery-3.3.1.slim.min.js"></script>
+                                <script src="/assets/js/popper.min.js"></script>
+                                <script src="/assets/js/bootstrap.min.js"></script>
+                                <script src="/assets/js/jquery-3.3.1.min.js"></script>
 
 
-                            <script type="text/javascript">
-                                $(document).ready(function() {
-                                    $(".xp-menubar").on('click', function() {
-                                        $("#sidebar").toggleClass('active');
-                                        $("#content").toggleClass('active');
+                                <script type="text/javascript">
+                                    $(document).ready(function() {
+                                        $(".xp-menubar").on('click', function() {
+                                            $("#sidebar").toggleClass('active');
+                                            $("#content").toggleClass('active');
+                                        });
+
+                                        $('.xp-menubar,.body-overlay').on('click', function() {
+                                            $("#sidebar,.body-overlay").toggleClass('show-nav');
+                                        });
+
                                     });
-
-                                    $('.xp-menubar,.body-overlay').on('click', function() {
-                                        $("#sidebar,.body-overlay").toggleClass('show-nav');
-                                    });
-
-                                });
-                            </script>
+                                </script>
 
 </body>
 

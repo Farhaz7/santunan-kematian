@@ -43,23 +43,22 @@ route::get('syarat', [SyaratController::class, 'syarat'])->name('syarat');
 
 route::get('dbuser', [DashboardController::class, 'dbuser'])->name('dbuser');
 
-route::get('profil/{id}', [ProfilController::class, 'profil']);
-
+route::get('profil', [ProfilController::class, 'profil']);
 route::get('upload', [UploadBerkasController::class, 'upload'])->name('upload');
 
 route::post('/upload-file', [UploadController::class, 'upload']);
-route::put('/simpan-data/{id}', [ProfilController::class, 'SimpanData']);
+Route::put('/simpan-data/{id}', [ProfilController::class, 'updateProfile']);
 
 Route::get('dbadmin', [HomeController::class, 'index_admin'])->name('dbadmin');
-
-
 Route::get('pengajuan', [PengajuanController::class, 'pengajuan'])->name('pengajuan');
-
 Route::get('berkasuser', [BerkasController::class, 'berkasuser'])->name('berkasuser');
-
-Route::get('dbpengajuan', [DataPengajuanController::class, 'dbpengajuan'])->name('dbpengajuan');
-
-
+Route::get('/dbpengajuan/{id}', [DataPengajuanController::class, 'dbpengajuan'])->name('dbpengajuan');
 Route::get('dbdapatsantunan', [DataDapatSantunanController::class, 'dbdapatsantunan'])->name('dbdapatsantunan');
+Route::get('/berkas/status/{status}', 'HomeController@indexStatus');
+Route::get('/berkasditerima/{id}', [DataPengajuanController::class, 'berkasditerima']);
+Route::get('/berkasperbaikan/{id}', [DataPengajuanController::class, 'berkasdiperbaiki']);
+Route::get('/berkasditolak/{id}', [DataPengajuanController::class, 'berkasditolak']);
 
-
+Route::get('pengajuandicairkan/{id}', [DataDapatSantunanController::class, 'pengajuandicairkan']);
+Route::get('pengajuandiperbaiki/{id}', [DataDapatSantunanController::class, 'pengajuandiperbaiki']);
+Route::get('pengajuanditolak/{id}', [DataDapatSantunanController::class, 'pengajuanditolak']);

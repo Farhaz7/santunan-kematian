@@ -29,9 +29,9 @@ class LoginController extends Controller
         if (Auth::attempt($data)) {
             $user_role=Auth::user()->role;
             if ($user_role == '1') {
-                $usersWithUploads = User::with('uploadBerkas')->get();
+                $usersWithUploads = User::where('id','!=',1)->get();
                 toastr()->success("Berhasil Login");
-                return view('dbadmin', compact('usersWithUploads'));
+                return redirect('dbadmin');
             }
             
                 else if($user_role=='2'){
@@ -52,8 +52,8 @@ class LoginController extends Controller
     public function index()
     {
         $usersWithUploads = User::with('uploadBerkas')->get();
-                toastr()->success("Berhasil Login");
-                return view('dbadmin', compact('usersWithUploads'));
+        toastr()->success("Berhasil Login");
+        return view('dbadmin', compact('usersWithUploads'));
         
     }
 }

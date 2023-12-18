@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/assets/img/bjb.ico" />
     <title>Data Penerima Santunan</title>
@@ -29,28 +29,29 @@
         <div class="body-overlay"></div>
         <div id="sidebar">
             <div class="sidebar-header">
-            <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="logo-container">
-        <div class="logo">
-            <img src="/assets/img/bjb.png" alt="Logo" class="front-face">
-            <img src="/assets/img/bjb.png" alt="Back of Logo" class="back-face">
-        </div>
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
+                <html lang="en">
+
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <link rel="stylesheet" href="styles.css">
+                </head>
+
+                <body>
+                    <div class="logo-container">
+                        <div class="logo">
+                            <img src="/assets/img/bjb.png" alt="Logo" class="front-face">
+                            <img src="/assets/img/bjb.png" alt="Back of Logo" class="back-face">
+                        </div>
+                    </div>
+                    <script src="script.js"></script>
+                </body>
+
+                </html>
                 <div class="image-container">
-                    <img src="/assets/img/bjb.png" style="height: 80px; width: 100px; text-align: center;"
-                        class="img-fluid" />
+                    <img src="/assets/img/bjb.png" style="height: 80px; width: 100px; text-align: center;" class="img-fluid" />
                 </div>
-                <h5
-                    style="text-align: center; font-size: 22px; white-space: nowrap; font-family: 'Bebas Neue', sans-serif;">
+                <h5 style="text-align: center; font-size: 22px; white-space: nowrap; font-family: 'Bebas Neue', sans-serif;">
                     <span>Layanan<br>Santunan Kematian</span>
                 </h5>
             </div>
@@ -61,10 +62,9 @@
                 </li>
 
                 <li class="dropdown">
-                    <a href="#homeSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
-                            class="material-icons">dataset</i>Data</a>
+                    <a href="#homeSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="material-icons">dataset</i>Data</a>
                     <ul class="collapse list-unstyled menu" id="homeSubmenu1">
-                        <li><a href="{{route('dbpengajuan')}}"><i class="material-icons">arrow_right</i>Data Pengajuan</a></li>
+                        <li><a href="#"><i class="material-icons">arrow_right</i>Data Pengajuan</a></li>
                         <li><a href="{{route('dbdapatsantunan')}}"><i class="material-icons">arrow_right</i>Data Penerima Santunan</a></li>
                     </ul>
                 </li>
@@ -95,7 +95,7 @@
                                     <ul class="nav navbar-nav flex-row ml-auto">
                                         <li class="dropdown nav-item">
                                             <a class="nav-link" href="#" data-toggle="dropdown">
-                                                <span class="material-icons">notifications</span>
+                                                <!-- <span class="material-icons">notifications</span> -->
                                             </a>
                                             <ul class="dropdown-menu">
                                                 <li><a href="#">You Have New Messages</a></li>
@@ -105,8 +105,8 @@
 
                                         <li class="dropdown nav-item">
                                             <a class="nav-link" href="#" data-toggle="dropdown">
-                                                <img src="img/user.jpg" style="width:40px; border-radius:50%;" />
-                                                <span class="xp-user-live"></span></a>
+                                                <span class="material-icons">person_outline</span>
+                                            </a>
                                             <ul class="dropdown-menu small-menu">
                                                 <li><a href="#"><span class="material-icons">settings</span>Settings</a></li>
                                                 <li><a href="{{ route('actionlogout') }}"><span class="material-icons">logout</span>Keluar</a></li>
@@ -121,15 +121,15 @@
                 </div>
             </div>
 
-            <div class="main-content sarat" style=" height: 780px;">
+            <div class="main-content sarat" style=" height: 1000px;">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="xp-breadcrumbbar text-center">
                             {{-- <h4 class="page-title">Dashboard Admin</h4> --}}
                             <div class="main-content text-center">
                                 @section('konten')
-                                       <h5> Anda sebagai Admin, Berikut Data Masyarakat yang mendapatkan Santunan Kematian.
-                                    </h5>
+                                <h5> Anda sebagai Admin, Berikut Data Masyarakat yang mendapatkan Santunan Kematian.
+                                </h5>
                                 @show
                             </div>
                             </ol>
@@ -152,55 +152,81 @@
                                                         <th style="text-align: center"><b>Status</th>
                                                 </thead>
                                                 <tbody>
+                                                    @foreach($usersWithUploads as $item)
                                                     <tr>
-                                                        <td style="text-align: center"></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td><div class="form-group">
-                                                                <input type="date" id="" value="" name="tgl_meninggal"
-                                                             class="form-control"></td>
-                                                        <td> <form action="upload.php" method="post" enctype="multipart/form-data">
-                                                          <input type="file" name="fileToUpload" id="fileToUpload">
-                                                       </form> </td>
-                                                        <td><div class="button-container"> <button id="okButton" class="btn btn-primary">Dicairkan</button> <button id="noButton" class="btn btn-danger">Diperbaiki</button></div></td>
-                                                    </tr>
-                                                </tbody>
-                                                <tbody>
-                                              </tbody>
-                                            </table>
-                                        </div >
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <nav aria-label="Page navigation example">
-         <ul class="pagination">
-       <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-       <li class="page-item"><a class="page-link" href="#">1</a></li>
-       <li class="page-item"><a class="page-link" href="#">2</a></li>
-       <li class="page-item"><a class="page-link" href="#">3</a></li>
-       <li class="page-item"><a class="page-link" href="#">Next</a></li>
-      </ul>
-        </nav>
-                    <script src="/assets/js/jquery-3.3.1.slim.min.js"></script>
-                    <script src="/assets/js/popper.min.js"></script>
-                    <script src="/assets/js/bootstrap.min.js"></script>
-                    <script src="/assets/js/jquery-3.3.1.min.js"></script>
-                    <script src="/assets/js/script.js"></script>
-                    <script src="/assets/js/scripbtn.js"></script>
-                    <script src="/assets/js/button.js"></script>
-                    <script type="text/javascript">
-                        $(document).ready(function() {
-                            $(".xp-menubar").on('click', function() {
-                                $("#sidebar").toggleClass('active');
-                                $("#content").toggleClass('active');
-                            });
+                                                        <td style="text-align: center">{{$item->user->nama_meninggal}}</td>
+                                                        <td style="text-align: center">{{$item->user->tgl_meninggal}}</td>
+                                                        <td style="text-align: center">{{$item->user->nama_ahwa}}</td>
+                                                        <td style="text-align: center">{{$item->created_at->isoFormat('D MMMM Y')}}</td>
+                                                        <td>
+                                                            <div class="form-group">
+                                                                <input type="date" id="" value="" name="tgl_pencairan" class="form-control">
+                                                        </td>
+                                                        <td>
+                                                            <form action="upload.php" method="post" enctype="multipart/form-data">
+                                                                <input type="file" name="fileToUpload" id="fileToUpload">
+                                                            </form>
+                                                        </td>
+                                                        <td>
+                                                            <div class="container mt-5">
+                                                                <div class="button-container">
+                                                                    <a href="/pengajuandicairkan/{{$item->id}}" class="btn btn-success mr-2">Dicairkan</a>
+                                                                    <a href="/pengajuandiperbaiki/{{$item->id}}" class="btn btn-warning mr-2">Proses</a>
+                                                                    <a href="/pengajuanditolak/{{$item->id}}" class="btn btn-danger mr-2">Tolak</a>
+                                                                </div>
+                                                            </div>
+                                                            <script>
+                                                            </script>
+</body>
 
-                            $('.xp-menubar,.body-overlay').on('click', function() {
-                                $("#sidebar,.body-overlay").toggleClass('show-nav');
-                            });
-                        });
-                    </script>
-        </body>
+</html>
+</td>
+</tr>
+</td>
+</tr>
+@endforeach
+</tbody>
+<tbody>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+    </ul>
+</nav>
+<script src="/assets/js/jquery-3.3.1.slim.min.js"></script>
+<script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/jquery-3.3.1.min.js"></script>
+<script src="/assets/js/script.js"></script>
+<script src="/assets/js/scripbtn.js"></script>
+<script src="/assets/js/button.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".xp-menubar").on('click', function() {
+            $("#sidebar").toggleClass('active');
+            $("#content").toggleClass('active');
+        });
+
+        $('.xp-menubar,.body-overlay').on('click', function() {
+            $("#sidebar,.body-overlay").toggleClass('show-nav');
+        });
+    });
+</script>
+</body>
+
 </html>

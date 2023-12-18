@@ -57,13 +57,13 @@
             </div>
             <ul class="list-unstyled component m-0">
                 <li class="active">
-                    <a href="dbadmin" class="dashboard"><i class="material-icons">home</i>Dashboard </a>
+                    <a href="{{route('dbadmin')}}" class="dashboard"><i class="material-icons">home</i>Dashboard </a>
                 </li>
                 <li class="dropdown">
                     <a href="#homeSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="material-icons">dataset</i>Data</a>
                     <ul class="collapse list-unstyled menu" id="homeSubmenu1">
-                        <li><a href="{{route('dbpengajuan')}}"><i class="material-icons">arrow_right</i>Data Pengajuan</a></li>
-                        <li><a href="{{route('dbdapatsantunan')}}"><i class="material-icons">arrow_right</i>Data Dapat Santunan</a></li>
+                        <li><a href="#"><i class="material-icons">arrow_right</i>Data Pengajuan</a></li>
+                        <li><a href="#"><i class="material-icons">arrow_right</i>Data Dapat Santunan</a></li>
                     </ul>
                 </li>
                 <li class="logout">
@@ -92,7 +92,7 @@
                                     <ul class="nav navbar-nav flex-row ml-auto">
                                         <li class="dropdown nav-item">
                                             <a class="nav-link" href="#" data-toggle="dropdown">
-                                                <span class="material-icons">notifications</span>
+                                                <!-- <span class="material-icons">notifications</span> -->
                                             </a>
                                             <ul class="dropdown-menu">
                                                 <li><a href="#">You Have New Messages</a></li>
@@ -100,8 +100,8 @@
                                         </li>
                                         <li class="dropdown nav-item">
                                             <a class="nav-link" href="#" data-toggle="dropdown">
-                                                <img src="img/user.jpg" style="width:40px; border-radius:50%;" />
-                                                <span class="xp-user-live"></span></a>
+                                                <span class="material-icons">person_outline</span>
+                                            </a>
                                             <ul class="dropdown-menu small-menu">
                                                 <li><a href="#"><span class="material-icons">settings</span>Settings</a></li>
                                                 <li><a href="{{ route('actionlogout') }}"><span class="material-icons">logout</span>Keluar</a></li>
@@ -114,7 +114,7 @@
                     </div>
                 </div>
             </div>
-            <div class="main-content sarat" style=" height: 708px;">
+            <div class="main-content sarat" style=" height: 1500px;">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="xp-breadcrumbbar text-center">
@@ -134,104 +134,109 @@
                                     <div class="card-body">
                                         <div class="table-responsive">
                                             <table class="table table-bordered">
-                                                    <thead>
-                                                        <tr>
-                                                            <th style="text-align:center"><b>Nama Yang Meninggal</th>
-                                                            <th style="text-align: center"><b>Berkas</th>
-                                                            <th style="text-align: center"><b>File</th>
-                                                            <th style="text-align: center"><b>Status(Diterima/Diperbaiki)</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                    @foreach($usersWithUploads as $user)
-                                                    @if($user->uploadBerkas)
+                                                <thead>
                                                     <tr>
-                                                        <td rowspan="9" style="text-align: center">{{$user->nama_meninggal}}</td>
+                                                        <th style="text-align:center"><b>Nama Yang Meninggal</th>
+                                                        <th style="text-align: center"><b>Berkas</th>
+                                                        <th style="text-align: center"><b>File</th>
+                                                        <th style="text-align: center"><b>Status(Diterima/Diperbaiki/Ditolak)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td rowspan="9" style="text-align: center">{{$berkasuser->user->nama_meninggal}}</td>
                                                         <td style="text-align: center">SP Dari Kelurahan</td>
-                                                        <td style="text-align: center"><a href="/storage/{{$user->uploadBerkas->surat_pengantar}}">Lihat</a></td>
+                                                        <td style="text-align: center"><a href="/storage/{{$berkasuser->surat_pengantar}}">Lihat</a></td>
                                                         <td style="text-align: center;" rowspan="9">
-                        <div class="button-container">
-                            <button id="yaButton" class="btn btn-primary">Diterima</button>
-                            <button id="tidakButton" class="btn btn-danger">Diperbaiki</button>
-                        </div>
-                    </td>
-                                                    </tr>
-                                                    <tr>
-                                                        
-                                                        <td style="text-align: center">S.Ahwa dari kelurahan</td>
-                                                        <td style="text-align: center"><a href="/storage/{{$user->uploadBerkas->surat_ahwa}}">Lihat</a></td>
-                                                        
-                                                    </tr>
-                                                    <tr>
-                                                        
-                                                        <td style="text-align: center">SK tidak mampu atau kartu KIS/KKS/BPJS/JAMKESDA DLL</td>
-                                                        <td style="text-align: center"><a href="/storage/{{$user->uploadBerkas->surat_tdk_mampu}}">Lihat</a></td>
-                                                        
-                                                    </tr>
-                                                    <tr>
-                                                        
-                                                        <td style="text-align: center">FC E-KTP yang meninggal</td>
-                                                        <td style="text-align: center"><a href="/storage/{{$user->uploadBerkas->fc_ktp_meninggal}}">Lihat</a></td>
-                                                        
-                                                    </tr>
-                                                    <tr>
-                                                       
-                                                        <td style="text-align: center">FC E-KTP ahli waris</td>
-                                                        <td style="text-align: center"><a href="/storage/{{$user->uploadBerkas->fc_ktp_ahwa}}">Lihat</a></td>
-                                                        
-                                                    </tr>
-                                                    <tr>
-                                                        
-                                                        <td style="text-align: center">FC kartu keluarga Yg Meninggal</td>
-                                                        <td style="text-align: center"><a href="/storage/{{$user->uploadBerkas->fc_kk_meninggal}}">Lihat</a></td>
-                                                        
-                                                    </tr>
-                                                    <tr>
-                                                        
-                                                        <td style="text-align: center">FC akte kematian</td>
-                                                        <td style="text-align: center"><a href="/storage/{{$user->uploadBerkas->fc_akte_meninggal}}">Lihat</a></td>
-                                                        
-                                                    </tr>
-                                                    <tr>
-                                                        
-                                                        <td style="text-align: center">FC kartu keluarga Ahwa</td>
-                                                        <td style="text-align: center"><a href="/storage/{{$user->uploadBerkas->fc_kk_ahwa}}">Lihat</a></td>
-                                                        
-                                                    </tr>
-                                                    <tr>
-                                                        
-                                                        <td style="text-align: center">FC akte kematian</td>
-                                                        <td style="text-align: center"><a href="/storage/{{$user->uploadBerkas->fc_akte_meninggal}}">Lihat</a></td>
-                                                        
-                                                    </tr>
-                                                    </thead>
-                                                    @endif
-                                                    @endforeach
+                                                            <div class="container mt-5">
+                                                                <div class="button-container">
+                                                                    <div class="d-grid gap-2">
+                                                                        <a href="/berkasditerima/{{$berkasuser->id}}" id="terimaButton" class="btn btn-success">Terima</a>
+                                                                        <a href="/berkasperbaikan/{{$berkasuser->id}}" id="perbaikanButton" class="btn btn-warning">Perbaikan</a>
+                                                                        <a href="/berkasditolak/{{$berkasuser->id}}" id="tolakButton" class="btn btn-danger">Tolak</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <script>
+                                                            </script>
+</body>
 
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <script src="/assets/js/jquery-3.3.1.slim.min.js"></script>
-                        <script src="/assets/js/popper.min.js"></script>
-                        <script src="/assets/js/bootstrap.min.js"></script>
-                        <script src="/assets/js/jquery-3.3.1.min.js"></script>
-                        <script src="/assets/js/script.js"></script>
-                        <script type="text/javascript">
-                            $(document).ready(function() {
-                                $(".xp-menubar").on('click', function() {
-                                    $("#sidebar").toggleClass('active');
-                                    $("#content").toggleClass('active');
-                                });
+</html>
+</td>
+</tr>
+<tr>
+    <td style="text-align: center">S.Ahwa dari kelurahan</td>
+    <th style="text-align: center"><a href="/storage/{{$berkasuser->surat_ahwa}}">Lihat</a></th>
 
-                                $('.xp-menubar,.body-overlay').on('click', function() {
-                                    $("#sidebar,.body-overlay").toggleClass('show-nav');
-                                });
-                            });
-                        </script>
+</tr>
+<tr>
+
+    <td style="text-align: center">SK tidak mampu atau kartu KIS/KKS/BPJS/JAMKESDA DLL</td>
+    <th style="text-align: center"><a href="/storage/{{$berkasuser->surat_tdk_mampu}}">Lihat</a></th>
+
+</tr>
+<tr>
+
+    <td style="text-align: center">Foto E-KTP yang meninggal</td>
+    <th style="text-align: center"><a href="/storage/{{$berkasuser->fc_ktp_meninggal}}">Lihat</a></th>
+
+</tr>
+<tr>
+
+    <td style="text-align: center">Foto E-KTP ahli waris</td>
+    <th style="text-align: center"><a href="/storage/{{$berkasuser->fc_ktp_ahwa}}">Lihat</a></th>
+
+</tr>
+<tr>
+
+    <td style="text-align: center">Foto kartu keluarga Yg Meninggal</td>
+    <th style="text-align: center"><a href="/storage/{{$berkasuser->fc_kk_meninggal}}">Lihat</a></th>
+
+</tr>
+<tr>
+
+    <td style="text-align: center">Foto akte kematian</td>
+    <th style="text-align: center"><a href="/storage/{{$berkasuser->fc_akte_meninggal}}">Lihat</a></th>
+
+</tr>
+<tr>
+
+    <td style="text-align: center">Foto kartu keluarga Ahwa</td>
+    <th style="text-align: center"><a href="/storage/{{$berkasuser->fc_kk_ahwa}}">Lihat</a></th>
+
+</tr>
+<tr>
+
+    <td style="text-align: center">Foto akte kematian</td>
+    <th style="text-align: center"><a href="/storage/{{$berkasuser->fc_akte_meninggal}}">Lihat</a></th>
+
+</tr>
+</thead>
+
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src="/assets/js/jquery-3.3.1.slim.min.js"></script>
+<script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/jquery-3.3.1.min.js"></script>
+<script src="/assets/js/script.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".xp-menubar").on('click', function() {
+            $("#sidebar").toggleClass('active');
+            $("#content").toggleClass('active');
+        });
+
+        $('.xp-menubar,.body-overlay').on('click', function() {
+            $("#sidebar,.body-overlay").toggleClass('show-nav');
+        });
+    });
+</script>
 </body>
 
 </html>

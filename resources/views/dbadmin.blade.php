@@ -30,12 +30,12 @@
         <div class="body-overlay"></div>
         <div id="sidebar">
             <div class="sidebar-header">
-                    <div class="logo-container">
-                        <div class="logo">
-                            <img src="/assets/img/bjb.png" alt="Logo" class="front-face">
-                            <img src="/assets/img/bjb.png" alt="Back of Logo" class="back-face">
-                        </div>
+                <div class="logo-container">
+                    <div class="logo">
+                        <img src="/assets/img/bjb.png" alt="Logo" class="front-face">
+                        <img src="/assets/img/bjb.png" alt="Back of Logo" class="back-face">
                     </div>
+                </div>
                 <div class="image-container">
                     <img src="/assets/img/bjb.png" style="height: 80px; width: 100px; text-align: center;" class="img-fluid" />
                 </div>
@@ -52,7 +52,7 @@
                 <li class="dropdown">
                     <a href="#homeSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="material-icons">dataset</i>Data</a>
                     <ul class="collapse list-unstyled menu" id="homeSubmenu1">
-                        <li><a href="{{route('dbpengajuan')}}"><i class="material-icons">arrow_right</i>Data Pengajuan</a></li>
+                        <li><a href="#"><i class="material-icons">arrow_right</i>Data Pengajuan</a></li>
                         <li><a href="{{route('dbdapatsantunan')}}"><i class="material-icons">arrow_right</i>Data Dapat Santunan</a></li>
                     </ul>
                 </li>
@@ -73,27 +73,34 @@
                             <div class="xp-menubar">
                                 <span class="material-icons text-white">signal_cellular_alt</span>
                             </div>
+
                         </div>
+
                         <div class="col-md-5 col-lg-3 order-3 order-md-2">
                             <div class="xp-searchbar">
                             </div>
                         </div>
+                    
                         <div class="col-10 col-md-6 col-lg-8 order-1 order-md-3">
                             <div class="xp-profilebar text-right">
                                 <nav class="navbar p-0">
+                                    
+                                    
                                     <ul class="nav navbar-nav flex-row ml-auto">
                                         <li class="dropdown nav-item">
                                             <a class="nav-link" href="#" data-toggle="dropdown">
-                                                <span class="material-icons">notifications</span>
+                                                <!-- <span class="material-icons">notifications</span> -->
                                             </a>
+
                                             <ul class="dropdown-menu">
                                                 <li><a href="#">You Have New Messages</a></li>
                                             </ul>
                                         </li>
+                                        
                                         <li class="dropdown nav-item">
                                             <a class="nav-link" href="#" data-toggle="dropdown">
-                                                <img src="img/user.jpg" style="width:40px; border-radius:50%;" />
-                                                <span class="xp-user-live"></span></a>
+                                                <span class="material-icons">person_outline</span>
+                                            </a>
                                             <ul class="dropdown-menu small-menu">
                                                 <li><a href="#"><span class="material-icons">settings</span>Settings</a></li>
                                                 <li><a href="{{ route('actionlogout') }}"><span class="material-icons">logout</span>Keluar</a></li>
@@ -106,7 +113,7 @@
                     </div>
                 </div>
             </div>
-            <div class="main-content sarat" style=" height: 780;">
+            <div class="main-content sarat" style=" height: 1000;">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="xp-breadcrumbbar text-center">
@@ -142,19 +149,19 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    @foreach($usersWithUploads as $item)
+                                                    @foreach($berkas as $item)
                                                     <tr>
                                                         <td style="text-align: center">{{$loop->iteration}}</td>
-                                                        <td style="text-align: center">{{$item->nik_meninggal}}</td>
-                                                        <td style="text-align: center">{{$item->nama_meninggal}}</td>
-                                                        <td style="text-align: center">{{$item->tgl_meninggal}}</td>
-                                                        <td style="text-align: center">{{$item->alamat_meninggal}}</td>
-                                                        <td style="text-align: center">{{$item->notelp_ahwa}}</td>
-                                                        <td style="text-align: center">{{$item->alamat_ahwa}}</td>
-                                                        <td style="text-align: center">{{$item->nik_ahwa}}</td>
-                                                        <td style="text-align: center">{{$item->nama_ahwa}}</td>
+                                                        <td style="text-align: center">{{$item->user->nik_meninggal}}</td>
+                                                        <td style="text-align: center">{{$item->user->nama_meninggal}}</td>
+                                                        <td style="text-align: center">{{$item->user->tgl_meninggal}}</td>
+                                                        <td style="text-align: center">{{$item->user->alamat_meninggal}}</td>
+                                                        <td style="text-align: center">{{$item->user->notelp_ahwa}}</td>
+                                                        <td style="text-align: center">{{$item->user->alamat_ahwa}}</td>
+                                                        <td style="text-align: center">{{$item->user->nik_ahwa}}</td>
+                                                        <td style="text-align: center">{{$item->user->nama_ahwa}}</td>
                                                         <td style="text-align: center">{{$item->created_at->isoFormat('D MMMM Y')}}</td>
-                                                        <td><a href="/dbpengajuan" class="btn btn-warning">periksa</a></td>
+                                                        <td><a href="/dbpengajuan/{{$item->id}}" class="btn btn-warning">periksa</a></td>
                                                     </tr>
                                                     @endforeach
                                                 </tbody>

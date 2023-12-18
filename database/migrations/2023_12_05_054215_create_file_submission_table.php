@@ -27,6 +27,8 @@ return new class extends Migration
             $table->string('status_berkas')->default('0');
             $table->string('status_pengajuan')->default('0');
             $table->string('keterangan_pengajuan')->default('');
+            $table->string('tanggal_pencairan')->nullable();
+            $table->string('foto')->nullable();
             $table->timestamps();
         });
     }

@@ -22,10 +22,30 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                @foreach($berkasuser as $item)
+                                    <tr>
+                                        @if ($item->status_berkas == '0')
+                                            <th style="text-align: center">Berkas Anda Sedang Diproses</th>
+                                        @elseif ($item->status_berkas == '1')
+                                            <th style="text-align: center">Berkas Anda Diterima</th>
+                                        @elseif ($item->status_berkas == '2')
+                                            <th style="text-align: center">Berkas Anda Ada Yang Harus Perbaikan</th>
+                                        @else
+                                            <th style="text-align: center">Berkas Anda Ditolak</th>
+                                        @endif
+
+                                        @if ($item->status_pengajuan == '0')
+                                            <th style="text-align: center">Pengajuan Anda Sedang Diproses</th>
+                                        @elseif ($item->status_pengajuan == '1')
+                                            <th style="text-align: center">Pengajuan Anda Dicairkan</th>
+                                        @elseif ($item->status_pengajuan == '2')
+                                            <th style="text-align: center">Pengajuan Anda Ada Yang Harus diperbaiki</th>
+                                        @else
+                                            <th style="text-align: center">Pengajuan Anda Ditolak</th>
+                                        @endif
+                                    </tr>
                                     <td></td>
-                                    <td></td>
-                                </tr>
+                                @endforeach
                             </tbody>
                     </div>
                 </div>

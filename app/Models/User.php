@@ -57,7 +57,7 @@ class User extends Authenticatable
     ];
     public function uploadBerkas()
     {
-        return $this->hasOne(UploadBerkasUsers::class, 'user_id');
+        return $this->hasOne(UploadBerkasUsers::class,'id', 'user_id');
     }
 }
 

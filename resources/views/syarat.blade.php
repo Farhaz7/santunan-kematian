@@ -15,14 +15,16 @@
                             <section style="font-size: 15px"> 2. Surat Ahli Waris dari Kelurahan<section>
                                     <section style="font-size: 15px"> 3. Surat keterangan tidak mampu atau Kart
                                         KIS/KKS/Jamkesda DLL Khusus warga tidak mampu.<section>
-                                            <section style="font-size: 15px"> 4. Fotocopy E-KTP yang meninggal dan Bagi anak yang belum ber E-KTP bisa diganti dengan akta kelahiran,<br> KIA atau surat keterangan Lahir dari Bidan / Dokter.
+                                            <section style="font-size: 15px"> 4. Foto E-KTP yang meninggal dan Bagi anak yang belum ber E-KTP bisa diganti dengan akta kelahiran,<br> KIA atau surat keterangan Lahir dari Bidan / Dokter.
                                                 <section>
-                                                    <section style="font-size: 15px"> 5. Fotocopy E-KTP Ahli waris.
+                                                    <section style="font-size: 15px"> 5. Foto E-KTP Ahli waris.
                                                         <section>
-                                                            <section style="font-size: 15px"> 6. Fotocopy Kart
-                                                                Keluarga.<section>
-                                                                    <section style="font-size: 15px"> 7. Fotocopy Akte
+                                                            <section style="font-size: 15px"> 6. Foto Kartu
+                                                                Keluarga Yang Meninggal.<section>
+                                                                    <section style="font-size: 15px"> 7. Foto Akte
                                                                         Kematian.<section>
+																		<section style="font-size: 15px"> 8. Foto Kartu 
+                                                                        Keluarga Ahli Waris.<section>
                                                                           
                 </div>
 
